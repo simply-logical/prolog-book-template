@@ -1,0 +1,20 @@
+- file: src/prolog_book_template.md
+  #title: 'Interactive Prolog Book Example'
+
+- file: src/text/github.md
+  #title: 'GitHub'
+- file: src/text/jupyter_book.md
+  #title: 'Jupyter Book'
+- file: src/text/sphinx_prolog.md
+  #title: '<tt>sphinx-prolog</tt> Extension'
+  sections:
+    - file: src/text/sphinx_prolog_infobox.md
+      #title: '<tt>infobox</tt> Blocks'
+    - file: src/text/sphinx_prolog_pprolog.md
+      #title: '<i>Pseudo Prolog<i> Syntax Highlighting'
+    - file: src/text/sphinx_prolog_solex.md
+      #title: '<tt>exercise</tt> and <tt>solution</tt> Blocks'
+    - file: src/text/sphinx_prolog_swish.md
+      #title: '<i>SWISH</i> Code and Query Blocks'
+- url: https://simply-logical.space/
+  title: 'Simply Logical Organisation'
