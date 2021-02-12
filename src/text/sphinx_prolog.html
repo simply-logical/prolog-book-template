@@ -259,6 +259,30 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installation">
+   Installation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#usage">
+   Usage
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#documentation">
+   Documentation
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -268,7 +292,75 @@
                 
   <div class="section" id="sphinx-prolog-extension">
 <span id="sec-sphinxprolog"></span><h1><code class="docutils literal notranslate"><span class="pre">sphinx-prolog</span></code> Extension<a class="headerlink" href="#sphinx-prolog-extension" title="Permalink to this headline">¶</a></h1>
+<p>The <a class="reference external" href="https://github.com/simply-logical/sphinx-prolog"><code class="docutils literal notranslate"><span class="pre">sphinx-prolog</span></code></a> extension implements four modules:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/simply-logical/sphinx-prolog/blob/master/sphinx_prolog/infobox.py"><code class="docutils literal notranslate"><span class="pre">infobox</span></code></a> responsible for creating admonition-styled <em>information boxes</em>
+that are referenceable and may be given a title – described in the
+<em><a class="reference internal" href="sphinx_prolog_infobox.html#sec-sphinxprolog-infobox"><span class="std std-ref">infobox Blocks</span></a></em> section;</p></li>
+<li><p><a class="reference external" href="https://github.com/simply-logical/sphinx-prolog/blob/master/sphinx_prolog/pprolog.py"><code class="docutils literal notranslate"><span class="pre">pprolog</span></code></a> implementing custom <em>Prolog syntax highlighting</em> for code boxes
+– described in the <em><a class="reference internal" href="sphinx_prolog_pprolog.html#sec-sphinxprolog-pprolog"><span class="std std-ref">Pseudo Prolog Syntax Highlighting</span></a></em> section;</p></li>
+<li><p><a class="reference external" href="https://github.com/simply-logical/sphinx-prolog/blob/master/sphinx_prolog/solex.py"><code class="docutils literal notranslate"><span class="pre">solex</span></code></a> enabling creation of automatically numbered, referenceable and
+linked admonition-styled <em>exercise</em> and <em>solution boxes</em> – described in the
+<em><a class="reference internal" href="sphinx_prolog_solex.html#sec-sphinxprolog-solex"><span class="std std-ref">exercise and solution Blocks</span></a></em> section; and</p></li>
+<li><p><a class="reference external" href="https://github.com/simply-logical/sphinx-prolog/blob/master/sphinx_prolog/swish.py"><code class="docutils literal notranslate"><span class="pre">swish</span></code></a> allowing to incorporate interactive SWI Prolog
+<em><a class="reference external" href="https://swish.swi-prolog.org/">SWISH</a>-based code</em> and <em>query boxes</em> – described in the
+<em><a class="reference internal" href="sphinx_prolog_swish.html#sec-sphinxprolog-swish"><span class="std std-ref">SWISH Code and Query Blocks</span></a></em> section.</p></li>
+</ul>
+<p>These modules add useful functionality when building Prolog-infused educational
+– teaching and self-study – content with <a class="reference external" href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="reference external" href="https://jupyterbook.org/">Jupyter Book</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This guide is written for <code class="docutils literal notranslate"><span class="pre">sphinx-prolog</span></code> version <code class="docutils literal notranslate"><span class="pre">0.4</span></code>.</p>
+</div>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference external" href="https://github.com/simply-logical/sphinx-prolog"><code class="docutils literal notranslate"><span class="pre">sphinx-prolog</span></code></a> extension  source code is hosted in the
+<a class="reference external" href="https://github.com/simply-logical/sphinx-prolog">simply-logical/sphinx-prolog</a> GitHub repository.
+It is distributed via the <em>Python Package Indexer</em> (<em><a class="reference external" href="https://pypi.org/project/sphinx-prolog/">PyPI</a></em>) and can be
+installed with <code class="docutils literal notranslate"><span class="pre">pip</span></code> by executing</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install sphinx-prolog
+</pre></div>
+</div>
+</div>
+<div class="section" id="usage">
+<span id="sec-sphinxprolog-usage"></span><h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<p>To use the functionality implemented by this extension, first you need to
+enable the desired modules in your Jupyter Book or Sphinx configuration file.
+In Jupyter Book this is achieved by adding the selected extension module names
+under the <code class="docutils literal notranslate"><span class="pre">sphinx.extra_extensions</span></code> key in the <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code> file</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">sphinx</span><span class="p">:</span>
+  <span class="nt">extra_extensions</span><span class="p">:</span>
+    <span class="c1"># Load sphinx-prolog &lt;https://github.com/simply-logical/sphinx-prolog&gt;</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">sphinx_prolog.infobox</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">sphinx_prolog.pprolog</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">sphinx_prolog.solex</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">sphinx_prolog.swish</span>
+</pre></div>
+</div>
+<p>In Sphinx, extensions are enabled by placing the module names in a Python list
+stored under the <code class="docutils literal notranslate"><span class="pre">extensions</span></code> variable in the <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> file</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
+<span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;sphinx_prolog.infobox&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;sphinx_prolog.pprolog&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;sphinx_prolog.solex&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;sphinx_prolog.swish&#39;</span><span class="p">,</span>
+              <span class="p">]</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="documentation">
+<h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h2>
+<p>The <em>technical documentation</em> of the <a class="reference external" href="https://github.com/simply-logical/sphinx-prolog"><code class="docutils literal notranslate"><span class="pre">sphinx-prolog</span></code></a> extension can be found
+in its <a class="reference external" href="https://github.com/simply-logical/sphinx-prolog">GitHub repository</a> in the <a class="reference external" href="https://github.com/simply-logical/sphinx-prolog/blob/master/README.md"><code class="docutils literal notranslate"><span class="pre">README.md</span></code></a> file.
+This page and the following sections, on the other hand, are a
+<em>practical user guide</em> sprinkled with actual usage examples for each module
+implemented by the extension.
+Here, we focus on the Jupyter Book platform and its <a class="reference external" href="https://myst-parser.readthedocs.io/">MyST Markdown</a> syntax,
+but the same functionality is available directly in Sphinx with its
+<a class="reference external" href="https://docutils.sourceforge.io/rst.html">reStructuredText</a> syntax.</p>
 <div class="toctree-wrapper compound">
+</div>
 </div>
 </div>
 

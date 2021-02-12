@@ -259,6 +259,37 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup">
+   Setup
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#usage">
+   Usage
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#assign-a-title">
+     Assign a Title
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tag-and-reference">
+     Tag and Reference
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -268,6 +299,177 @@
                 
   <div class="section" id="infobox-blocks">
 <span id="sec-sphinxprolog-infobox"></span><h1><code class="docutils literal notranslate"><span class="pre">infobox</span></code> Blocks<a class="headerlink" href="#infobox-blocks" title="Permalink to this headline">¶</a></h1>
+<p>Jupyter Book implements a wealth of <a class="reference external" href="https://jupyterbook.org/content/content-blocks.html#notes-warnings-and-other-admonitions">admonition boxes</a> such as</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>```{warning}
+content
+```
+</pre></div>
+</div>
+<p class="card-text">syntax for <em>warnings</em>;</p>
+</div>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>```{note}
+content
+```
+</pre></div>
+</div>
+<p class="card-text">syntax for <em>notes</em>;</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>```{tip}
+content
+```
+</pre></div>
+</div>
+<p class="card-text">syntax for <em>tips</em>; and</p>
+</div>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>```{seealso}
+content
+```
+</pre></div>
+</div>
+<p class="card-text">syntax for <em>see also</em>s.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>You can customise these admonitions by using the generic <code class="docutils literal notranslate"><span class="pre">admonition</span></code> block
+with a <em>desired class</em> (specified via the <code class="docutils literal notranslate"><span class="pre">:class:</span></code> parameter) and
+a <em>custom title</em>, for example</p>
+<div class="tip admonition">
+<p class="admonition-title">My Custom Title</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>```{admonition} My Custom Title
+:class: tip
+content
+```
+</pre></div>
+</div>
+<p>A <em>tip</em>-based admonition with a custom title.</p>
+</div>
+<p>However, these blocks cannot be <strong>tagged</strong> and <strong>referenced</strong> by their title.
+To address these shortcoming, the <code class="docutils literal notranslate"><span class="pre">sphinx_prolog.infobox</span></code> extension module
+implements custom <em>Information Boxes</em>.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See the Jupyter Book documentation for more details about the available
+<a class="reference external" href="https://jupyterbook.org/content/content-blocks.html#notes-warnings-and-other-admonitions">admonition boxes</a>.
+Other box types – such as <em>Caution</em>, <em>Attention</em>, <em>Danger</em> and <em>Error</em> –
+are <a class="reference external" href="https://jupyterbook.org/reference/cheatsheet.html#admonitions">also available</a>.</p>
+</div>
+<div class="section" id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
+<p>To enable the <code class="docutils literal notranslate"><span class="pre">sphinx_prolog.infobox</span></code> extension module in your Jupyter Book,
+include its name in your <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code> file under the <code class="docutils literal notranslate"><span class="pre">sphinx.extra_extensions</span></code>
+key</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">sphinx</span><span class="p">:</span>
+  <span class="nt">extra_extensions</span><span class="p">:</span>
+    <span class="c1"># Load sphinx-prolog &lt;https://github.com/simply-logical/sphinx-prolog&gt;</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">sphinx_prolog.infobox</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See the <a class="reference internal" href="sphinx_prolog.html#sec-sphinxprolog-usage"><span class="std std-ref">Usage</span></a> section of the <a class="reference internal" href="sphinx_prolog.html#sec-sphinxprolog"><span class="std std-ref">sphinx-prolog Extension</span></a>
+page for more details.</p>
+</div>
+</div>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<p>An Information Box is inserted with an admonition-like syntax using the
+<code class="docutils literal notranslate"><span class="pre">infobox</span></code> keyword and it has <strong>one required parameter</strong> – <code class="docutils literal notranslate"><span class="pre">:title:</span></code> –
+used to provide its title.</p>
+<div class="admonition infobox" id="ibox-one">
+<p class="admonition-title">A Custom Information Box<a class="headerlink" href="#ibox-one" title="Permalink to this infobox">¶</a></p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>```{infobox}
+:title: The Infomration Box Title
+The Information Box content.
+```
+</pre></div>
+</div>
+</div>
+<div class="section" id="assign-a-title">
+<h3>Assign a Title<a class="headerlink" href="#assign-a-title" title="Permalink to this headline">¶</a></h3>
+<p>Each Information Box <strong>requires</strong> a <em>title</em>, which is provided via the
+<code class="docutils literal notranslate"><span class="pre">:title:</span></code> parameter – see the example above.
+By hovering your mouse over the title section of an Information Box
+(the blue-coloured bar at the top), a hyper-link marker (¶) will be revealed
+to the right of the title text.
+By clicking it you will get a link pointing directly to this Information Box.</p>
+</div>
+<div class="section" id="tag-and-reference">
+<h3>Tag and Reference<a class="headerlink" href="#tag-and-reference" title="Permalink to this headline">¶</a></h3>
+<p>In addition to the external links provided under the hyper-link markers (¶),
+the Information Boxes can be easily <em>tagged</em> and <em>referenced</em> within the book.
+To tag a box place your tag string directly after the box opening statement,
+e.g., <code class="docutils literal notranslate"><span class="pre">```{infobox}</span> <span class="pre">ibox:my-tag</span></code>.
+<strong>The Information Box tags must be prefixed with <code class="docutils literal notranslate"><span class="pre">ibox:</span></code>.</strong></p>
+<div class="admonition infobox" id="ibox-two">
+<p class="admonition-title">Another Custom Information Box<a class="headerlink" href="#ibox-two" title="Permalink to this infobox">¶</a></p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>```{infobox} ibox:my-tag
+:title: The Title of Another Infomration Box
+The content of another Information Box.
+```
+</pre></div>
+</div>
+</div>
+<p>You can then reference your tagged Information Boxes anywhere in your book.
+This is achieved with the <code class="docutils literal notranslate"><span class="pre">{ref}`ibox:my-tag`</span></code> syntax.
+In the built book such command will be replaced with a <em>title</em> of the
+referenced Information Box hyper-linked to its location.
+For example, referencing the first Information Box gives <a class="reference internal" href="#ibox-one"><span class="std std-ref">A Custom Information Box</span></a>,
+and the second produces <a class="reference internal" href="#ibox-two"><span class="std std-ref">Another Custom Information Box</span></a>.
+If you prefer to assign a custom text to your hyper-link, there is a syntax for
+that as well: <code class="docutils literal notranslate"><span class="pre">{ref}`Custom</span> <span class="pre">Text</span> <span class="pre">&lt;ibox:my-tag&gt;`</span></code>.
+For example, the first Information Box can be referenced as
+<a class="reference internal" href="#ibox-one"><span class="std std-ref">Custom Reference to the First Box</span></a>.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For more infomration, see the <a class="reference external" href="https://jupyterbook.org/content/citations.html#referencing-overview">referencing overview</a> available in the
+Jupyter Book documentation.</p>
+</div>
+<hr class="docutils" />
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For more information about the Information Box module see
+its <a class="reference external" href="https://github.com/simply-logical/sphinx-prolog#information_source-infobox-directive"><em>technical documentation</em></a>.</p>
+</div>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">

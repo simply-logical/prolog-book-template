@@ -259,6 +259,25 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup">
+   Setup
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#usage">
+   Usage
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -268,6 +287,112 @@
                 
   <div class="section" id="pseudo-prolog-syntax-highlighting">
 <span id="sec-sphinxprolog-pprolog"></span><h1><em>Pseudo Prolog</em> Syntax Highlighting<a class="headerlink" href="#pseudo-prolog-syntax-highlighting" title="Permalink to this headline">¶</a></h1>
+<p>Jupyter Book comes with <a class="reference external" href="https://jupyterbook.org/reference/cheatsheet.html#code-and-syntax-highlighting"><em>code block syntax highlighting</em></a> for a broad
+collection of programming languages.
+Code blocks are introduced with a triple-backtick fence followed by
+the programming language name, i.e., <code class="docutils literal notranslate"><span class="pre">```languageID</span></code>.</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-header docutils">
+<p class="card-text">Outcome</p>
+</div>
+<div class="card-body docutils">
+<div class="highlight-prolog notranslate"><div class="highlight"><pre><span></span><span class="s s-Atom">?-</span> <span class="nf">append</span><span class="p">([</span><span class="s s-Atom">example</span><span class="p">,</span> <span class="s s-Atom">code</span><span class="p">],</span> <span class="p">[</span><span class="s s-Atom">snippet</span><span class="p">],</span> <span class="nv">A</span><span class="p">).</span>
+<span class="nv">A</span> <span class="o">=</span> <span class="p">[</span><span class="s s-Atom">example</span><span class="p">,</span> <span class="s s-Atom">code</span><span class="p">,</span> <span class="s s-Atom">snippet</span><span class="p">].</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-header docutils">
+<p class="card-text">Syntax</p>
+</div>
+<div class="card-body docutils">
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>```prolog
+?- append([example, code], [snippet], A).
+A = [example, code, snippet].
+```
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>While Prolog syntax highlighting is available out of the box, it fails in
+certain cases, e.g., when specifying <a class="reference external" href="https://book.simply-logical.space/src/text/1_part_i/2.1.html#propositional-clausal-logic"><em>clausal logic</em></a></p>
+<div class="highlight-prolog notranslate"><div class="highlight"><pre><span></span><span class="s s-Atom">married</span><span class="p">;</span><span class="nn">bachelor</span><span class="p">:</span><span class="o">-</span><span class="s s-Atom">man</span><span class="p">,</span><span class="s s-Atom">adult</span>
+</pre></div>
+</div>
+<p>We fix such highlighting discrepancies by defining <em>Pseudo Prolog</em> (<code class="docutils literal notranslate"><span class="pre">pProlog</span></code>)
+syntax in the <code class="docutils literal notranslate"><span class="pre">sphinx_prolog.pprolog</span></code> Sphinx extension module.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See the Jupyter Book documentation for more details about the
+<a class="reference external" href="https://jupyterbook.org/reference/cheatsheet.html#code-and-syntax-highlighting"><em>code block syntax highlighting</em></a>.</p>
+</div>
+<div class="section" id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
+<p>To enable the <code class="docutils literal notranslate"><span class="pre">sphinx_prolog.pprolog</span></code> extension module in your Jupyter Book,
+include its name in your <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code> file under the <code class="docutils literal notranslate"><span class="pre">sphinx.extra_extensions</span></code>
+key</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">sphinx</span><span class="p">:</span>
+  <span class="nt">extra_extensions</span><span class="p">:</span>
+    <span class="c1"># Load sphinx-prolog &lt;https://github.com/simply-logical/sphinx-prolog&gt;</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">sphinx_prolog.pprolog</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See the <a class="reference internal" href="sphinx_prolog.html#sec-sphinxprolog-usage"><span class="std std-ref">Usage</span></a> section of the <a class="reference internal" href="sphinx_prolog.html#sec-sphinxprolog"><span class="std std-ref">sphinx-prolog Extension</span></a>
+page for more details.</p>
+</div>
+</div>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<p>To use our Pseudo Prolog syntax highlighting, specify the <code class="docutils literal notranslate"><span class="pre">pProlog</span></code> language
+when defining your code boxes</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-header docutils">
+<p class="card-text">Outcome</p>
+</div>
+<div class="card-body docutils">
+<div class="highlight-pProlog notranslate"><div class="highlight"><pre><span></span><span class="s s-Atom">married</span><span class="p">;</span><span class="s s-Atom">bachelor</span><span class="o">:-</span><span class="s s-Atom">man</span><span class="p">,</span><span class="s s-Atom">adult</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-header docutils">
+<p class="card-text">Syntax</p>
+</div>
+<div class="card-body docutils">
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>```pProlog
+married;bachelor:-man,adult
+```
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For more information about the Pseudo Prolog syntax highlighting module see
+its <a class="reference external" href="https://github.com/simply-logical/sphinx-prolog#test_tube-pseudo-prolog-syntax-highlighting"><em>technical documentation</em></a>.</p>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">

@@ -1,0 +1,12 @@
+src/prolog_book_template.md:32: [broken] https://github.com/simply-logical/prolog-book-template#building-the-book: Anchor 'building-the-book' not found
+src/text/github.md:9: [redirected with Found] https://github.com/simply-logical/prolog-book-template/archive/master.zip to https://codeload.github.com/simply-logical/prolog-book-template/zip/master
+src/text/jupyter_book.md:52: [broken] http://localhost:8000: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fc738a7da90>: Failed to establish a new connection: [Errno 111] Connection refused'))
+src/text/jupyter_book.md:150: [broken] https://github.com/simply-logical/prolog-book-template/tree/master/src/code: 404 Client Error: Not Found for url: https://github.com/simply-logical/prolog-book-template/tree/master/src/code
+src/text/jupyter_book.md:152: [broken] https://github.com/simply-logical/prolog-book-template/tree/master/src/ex: 404 Client Error: Not Found for url: https://github.com/simply-logical/prolog-book-template/tree/master/src/ex
+src/text/jupyter_book.md:99: [redirected permanently] https://github.com/simply-logical/prolog-book-template/tree/master/_static/prolog-book-template.css to https://github.com/simply-logical/prolog-book-template/blob/master/_static/prolog-book-template.css
+src/text/jupyter_book.md:4: [redirected with Found] https://www.sphinx-doc.org/ to https://www.sphinx-doc.org/en/master/
+src/text/sphinx_prolog.md:17: [redirected with Found] https://www.sphinx-doc.org/ to https://www.sphinx-doc.org/en/master/
+src/text/sphinx_prolog.md:64: [redirected with Found] https://myst-parser.readthedocs.io/ to https://myst-parser.readthedocs.io/en/latest/
+src/text/sphinx_prolog_infobox.md:154: [broken] https://github.com/simply-logical/sphinx-prolog#information_source-infobox-directive: Anchor 'information_source-infobox-directive' not found
+src/text/sphinx_prolog_pprolog.md:29: [broken] https://book.simply-logical.space/src/text/1_part_i/2.1.html#propositional-clausal-logic: 404 Client Error: Not Found for url: https://book.simply-logical.space/src/text/1_part_i/2.1.html
+src/text/sphinx_prolog_pprolog.md:84: [broken] https://github.com/simply-logical/sphinx-prolog#test_tube-pseudo-prolog-syntax-highlighting: Anchor 'test_tube-pseudo-prolog-syntax-highlighting' not found

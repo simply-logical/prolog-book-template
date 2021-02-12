@@ -1,0 +1,96 @@
+{"filename": "src/prolog_book_template.md", "lineno": 41, "status": "unchecked", "code": 0, "uri": "#sec-github", "info": ""}
+{"filename": "src/prolog_book_template.md", "lineno": 42, "status": "unchecked", "code": 0, "uri": "#sec-jupyterbook", "info": ""}
+{"filename": "src/prolog_book_template.md", "lineno": 43, "status": "unchecked", "code": 0, "uri": "#sec-sphinxprolog", "info": ""}
+{"filename": "src/prolog_book_template.md", "lineno": 13, "status": "working", "code": 0, "uri": "https://book.simply-logical.space/", "info": ""}
+{"filename": "src/prolog_book_template.md", "lineno": 5, "status": "working", "code": 0, "uri": "https://github.com/simply-logical/sphinx-prolog", "info": ""}
+{"filename": "src/prolog_book_template.md", "lineno": 5, "status": "working", "code": 0, "uri": "https://pages.github.com/", "info": ""}
+{"filename": "src/prolog_book_template.md", "lineno": 5, "status": "working", "code": 0, "uri": "https://jupyterbook.org/", "info": ""}
+{"filename": "src/prolog_book_template.md", "lineno": 5, "status": "working", "code": 0, "uri": "https://github.com/simply-logical/prolog-book-template", "info": ""}
+{"filename": "src/prolog_book_template.md", "lineno": 32, "status": "working", "code": 0, "uri": "https://github.com/simply-logical/prolog-book-template", "info": ""}
+{"filename": "src/prolog_book_template.md", "lineno": 32, "status": "broken", "code": 0, "uri": "https://github.com/simply-logical/prolog-book-template#building-the-book", "info": "Anchor 'building-the-book' not found"}
+{"filename": "src/prolog_book_template.md", "lineno": 5, "status": "working", "code": 0, "uri": "https://www.swi-prolog.org/", "info": ""}
+{"filename": "src/prolog_book_template.md", "lineno": 5, "status": "working", "code": 0, "uri": "https://swish.swi-prolog.org/", "info": ""}
+{"filename": "src/text/github.md", "lineno": 9, "status": "unchecked", "code": 0, "uri": "#sec-jupyterbook", "info": ""}
+{"filename": "src/text/github.md", "lineno": 30, "status": "unchecked", "code": 0, "uri": "#sec-jupyterbook", "info": ""}
+{"filename": "src/text/github.md", "lineno": 72, "status": "unchecked", "code": 0, "uri": "#sec-jupyterbook", "info": ""}
+{"filename": "src/text/github.md", "lineno": 9, "status": "working", "code": 0, "uri": "https://github.com/simply-logical/prolog-book-template", "info": "old"}
+{"filename": "src/text/github.md", "lineno": 9, "status": "working", "code": 0, "uri": "https://github.com/simply-logical/prolog-book-template", "info": "old"}
+{"filename": "src/text/github.md", "lineno": 72, "status": "working", "code": 0, "uri": "https://github.com/simply-logical/prolog-book-template", "info": "old"}
+{"filename": "src/text/github.md", "lineno": 4, "status": "working", "code": 0, "uri": "https://github.com/", "info": ""}
+{"filename": "src/text/github.md", "lineno": 93, "status": "working", "code": 0, "uri": "https://docs.github.com/en/github/working-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site", "info": ""}
+{"filename": "src/text/github.md", "lineno": 106, "status": "working", "code": 0, "uri": "https://docs.github.com/en/github/working-with-github-pages/configuring-a-custom-domain-for-your-github-pages-site", "info": ""}
+{"filename": "src/text/github.md", "lineno": 22, "status": "working", "code": 0, "uri": "https://github.com/features/actions", "info": ""}
+{"filename": "src/text/github.md", "lineno": 9, "status": "redirected", "code": 302, "uri": "https://github.com/simply-logical/prolog-book-template/archive/master.zip", "info": "https://codeload.github.com/simply-logical/prolog-book-template/zip/master", "text": "with Found"}
+{"filename": "src/text/github.md", "lineno": 51, "status": "working", "code": 0, "uri": "https://github.com/simply-logical/prolog-book-template/blob/master/.github/workflows/build-and-deploy.yml", "info": ""}
+{"filename": "src/text/github.md", "lineno": 30, "status": "working", "code": 0, "uri": "https://github.com/simply-logical/prolog-book-template/blob/master/.github/workflows/build-and-deploy.yml", "info": ""}
+{"filename": "src/text/github.md", "lineno": 58, "status": "working", "code": 0, "uri": "https://github.com/simply-logical/prolog-book-template/blob/master/.github/workflows/build-and-deploy.yml", "info": ""}
+{"filename": "src/text/github.md", "lineno": 63, "status": "working", "code": 0, "uri": "https://github.com/simply-logical/prolog-book-template/actions", "info": ""}
+{"filename": "src/text/github.md", "lineno": 113, "status": "working", "code": 0, "uri": "https://github.com/simply-logical/prolog-book-template/blob/master/CNAME", "info": ""}
+{"filename": "src/text/github.md", "lineno": 106, "status": "working", "code": 0, "uri": "https://github.com/simply-logical/prolog-book-template/blob/master/CNAME", "info": ""}
+{"filename": "src/text/github.md", "lineno": 72, "status": "working", "code": 0, "uri": "https://jupyterbook.org/", "info": "old"}
+{"filename": "src/text/github.md", "lineno": 30, "status": "working", "code": 0, "uri": "https://github.com/simply-logical/prolog-book-template/blob/master/requirements.txt", "info": ""}
+{"filename": "src/text/github.md", "lineno": 63, "status": "working", "code": 0, "uri": "https://github.com/simply-logical/prolog-book-template/tree/gh-pages", "info": ""}
+{"filename": "src/text/github.md", "lineno": 72, "status": "working", "code": 0, "uri": "https://jekyllrb.com/", "info": ""}
+{"filename": "src/text/github.md", "lineno": 72, "status": "working", "code": 0, "uri": "https://github.com/simply-logical/prolog-book-template/blob/master/.nojekyll", "info": ""}
+{"filename": "src/text/jupyter_book.md", "lineno": 56, "status": "unchecked", "code": 0, "uri": "#sec-github-github-pages", "info": ""}
+{"filename": "src/text/jupyter_book.md", "lineno": 130, "status": "unchecked", "code": 0, "uri": "#sec-sphinxprolog", "info": ""}
+{"filename": "src/text/jupyter_book.md", "lineno": 154, "status": "unchecked", "code": 0, "uri": "#sec-sphinxprolog-solex", "info": ""}
+{"filename": "src/text/jupyter_book.md", "lineno": 154, "status": "unchecked", "code": 0, "uri": "#sec-sphinxprolog-swish", "info": ""}
+{"filename": "src/text/jupyter_book.md", "lineno": 52, "status": "broken", "code": 0, "uri": "http://localhost:8000", "info": "HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fc738a7da90>: Failed to establish a new connection: [Errno 111] Connection refused'))"}
+{"filename": "src/text/jupyter_book.md", "lineno": 73, "status": "working", "code": 0, "uri": "https://github.com/simply-logical/prolog-book-template/blob/master/README.md", "info": ""}
+{"filename": "src/text/jupyter_book.md", "lineno": 81, "status": "working", "code": 0, "uri": "https://github.com/simply-logical/prolog-book-template/blob/master/_config.yml", "info": ""}
+{"filename": "src/text/jupyter_book.md", "lineno": 31, "status": "working", "code": 0, "uri": "https://github.com/simply-logical/prolog-book-template/blob/master/requirements.txt", "info": "old"}
+{"filename": "src/text/jupyter_book.md", "lineno": 73, "status": "working", "code": 0, "uri": "https://github.com/simply-logical/prolog-book-template/tree/gh-pages", "info": "old"}
+{"filename": "src/text/jupyter_book.md", "lineno": 73, "status": "working", "code": 0, "uri": "https://github.com/simply-logical/prolog-book-template/blob/master/LICENCE", "info": ""}
+{"filename": "src/text/jupyter_book.md", "lineno": 56, "status": "working", "code": 0, "uri": "https://github.com/simply-logical/prolog-book-template/blob/master/_config.yml", "info": ""}
+{"filename": "src/text/jupyter_book.md", "lineno": 56, "status": "working", "code": 0, "uri": "https://github.com/simply-logical/prolog-book-template/blob/master/_config.yml", "info": ""}
+{"filename": "src/text/jupyter_book.md", "lineno": 140, "status": "working", "code": 0, "uri": "https://github.com/simply-logical/prolog-book-template/blob/master/_toc.yml", "info": ""}
+{"filename": "src/text/jupyter_book.md", "lineno": 99, "status": "working", "code": 0, "uri": "https://github.com/simply-logical/prolog-book-template/tree/master/_static", "info": ""}
+{"filename": "src/text/jupyter_book.md", "lineno": 150, "status": "broken", "code": 0, "uri": "https://github.com/simply-logical/prolog-book-template/tree/master/src/code", "info": "404 Client Error: Not Found for url: https://github.com/simply-logical/prolog-book-template/tree/master/src/code"}
+{"filename": "src/text/jupyter_book.md", "lineno": 140, "status": "working", "code": 0, "uri": "https://github.com/simply-logical/prolog-book-template/tree/master/src", "info": ""}
+{"filename": "src/text/jupyter_book.md", "lineno": 152, "status": "broken", "code": 0, "uri": "https://github.com/simply-logical/prolog-book-template/tree/master/src/ex", "info": "404 Client Error: Not Found for url: https://github.com/simply-logical/prolog-book-template/tree/master/src/ex"}
+{"filename": "src/text/jupyter_book.md", "lineno": 4, "status": "working", "code": 0, "uri": "https://jupyterbook.org/", "info": "old"}
+{"filename": "src/text/jupyter_book.md", "lineno": 145, "status": "working", "code": 0, "uri": "https://github.com/simply-logical/prolog-book-template/tree/master/src/img", "info": ""}
+{"filename": "src/text/jupyter_book.md", "lineno": 99, "status": "redirected", "code": 301, "uri": "https://github.com/simply-logical/prolog-book-template/tree/master/_static/prolog-book-template.css", "info": "https://github.com/simply-logical/prolog-book-template/blob/master/_static/prolog-book-template.css", "text": "permanently"}
+{"filename": "src/text/jupyter_book.md", "lineno": 147, "status": "working", "code": 0, "uri": "https://github.com/simply-logical/prolog-book-template/tree/master/src/text", "info": ""}
+{"filename": "src/text/jupyter_book.md", "lineno": 21, "status": "working", "code": 0, "uri": "https://pypi.org/project/jupyter-book/", "info": ""}
+{"filename": "src/text/jupyter_book.md", "lineno": 146, "status": "working", "code": 0, "uri": "https://github.com/simply-logical/prolog-book-template/tree/master/src/fig", "info": ""}
+{"filename": "src/text/jupyter_book.md", "lineno": 130, "status": "working", "code": 0, "uri": "https://pypi.org/project/sphinx-prolog/", "info": ""}
+{"filename": "src/text/jupyter_book.md", "lineno": 22, "status": "working", "code": 0, "uri": "https://pypi.org/project/sphinx-prolog/", "info": ""}
+{"filename": "src/text/jupyter_book.md", "lineno": 4, "status": "redirected", "code": 302, "uri": "https://www.sphinx-doc.org/", "info": "https://www.sphinx-doc.org/en/master/", "text": "with Found"}
+{"filename": "src/text/jupyter_book.md", "lineno": 92, "status": "working", "code": 0, "uri": "https://jupyterbook.org/customize/config.html", "info": ""}
+{"filename": "src/text/jupyter_book.md", "lineno": 160, "status": "working", "code": 0, "uri": "https://jupyterbook.org/customize/toc.html", "info": ""}
+{"filename": "src/text/jupyter_book.md", "lineno": 107, "status": "working", "code": 0, "uri": "https://jupyterbook.org/advanced/sphinx.html?highlight=_static#custom-css-or-javascript", "info": ""}
+{"filename": "src/text/sphinx_prolog.md", "lineno": 5, "status": "unchecked", "code": 0, "uri": "#sec-sphinxprolog-infobox", "info": ""}
+{"filename": "src/text/sphinx_prolog.md", "lineno": 8, "status": "unchecked", "code": 0, "uri": "#sec-sphinxprolog-pprolog", "info": ""}
+{"filename": "src/text/sphinx_prolog.md", "lineno": 10, "status": "unchecked", "code": 0, "uri": "#sec-sphinxprolog-solex", "info": ""}
+{"filename": "src/text/sphinx_prolog.md", "lineno": 13, "status": "unchecked", "code": 0, "uri": "#sec-sphinxprolog-swish", "info": ""}
+{"filename": "src/text/sphinx_prolog.md", "lineno": 4, "status": "working", "code": 0, "uri": "https://github.com/simply-logical/sphinx-prolog", "info": "old"}
+{"filename": "src/text/sphinx_prolog.md", "lineno": 26, "status": "working", "code": 0, "uri": "https://github.com/simply-logical/sphinx-prolog", "info": "old"}
+{"filename": "src/text/sphinx_prolog.md", "lineno": 26, "status": "working", "code": 0, "uri": "https://github.com/simply-logical/sphinx-prolog", "info": "old"}
+{"filename": "src/text/sphinx_prolog.md", "lineno": 64, "status": "working", "code": 0, "uri": "https://github.com/simply-logical/sphinx-prolog", "info": "old"}
+{"filename": "src/text/sphinx_prolog.md", "lineno": 64, "status": "working", "code": 0, "uri": "https://github.com/simply-logical/sphinx-prolog", "info": "old"}
+{"filename": "src/text/sphinx_prolog.md", "lineno": 5, "status": "working", "code": 0, "uri": "https://github.com/simply-logical/sphinx-prolog/blob/master/sphinx_prolog/infobox.py", "info": ""}
+{"filename": "src/text/sphinx_prolog.md", "lineno": 64, "status": "working", "code": 0, "uri": "https://github.com/simply-logical/sphinx-prolog/blob/master/README.md", "info": ""}
+{"filename": "src/text/sphinx_prolog.md", "lineno": 17, "status": "working", "code": 0, "uri": "https://jupyterbook.org/", "info": "old"}
+{"filename": "src/text/sphinx_prolog.md", "lineno": 10, "status": "working", "code": 0, "uri": "https://github.com/simply-logical/sphinx-prolog/blob/master/sphinx_prolog/solex.py", "info": ""}
+{"filename": "src/text/sphinx_prolog.md", "lineno": 26, "status": "working", "code": 0, "uri": "https://pypi.org/project/sphinx-prolog/", "info": "old"}
+{"filename": "src/text/sphinx_prolog.md", "lineno": 13, "status": "working", "code": 0, "uri": "https://swish.swi-prolog.org/", "info": "old"}
+{"filename": "src/text/sphinx_prolog.md", "lineno": 17, "status": "redirected", "code": 302, "uri": "https://www.sphinx-doc.org/", "info": "https://www.sphinx-doc.org/en/master/", "text": "with Found"}
+{"filename": "src/text/sphinx_prolog.md", "lineno": 64, "status": "working", "code": 0, "uri": "https://docutils.sourceforge.io/rst.html", "info": ""}
+{"filename": "src/text/sphinx_prolog.md", "lineno": 64, "status": "redirected", "code": 302, "uri": "https://myst-parser.readthedocs.io/", "info": "https://myst-parser.readthedocs.io/en/latest/", "text": "with Found"}
+{"filename": "src/text/sphinx_prolog.md", "lineno": 8, "status": "working", "code": 0, "uri": "https://github.com/simply-logical/sphinx-prolog/blob/master/sphinx_prolog/pprolog.py", "info": ""}
+{"filename": "src/text/sphinx_prolog.md", "lineno": 13, "status": "working", "code": 0, "uri": "https://github.com/simply-logical/sphinx-prolog/blob/master/sphinx_prolog/swish.py", "info": ""}
+{"filename": "src/text/sphinx_prolog_infobox.md", "lineno": 88, "status": "unchecked", "code": 0, "uri": "#sec-sphinxprolog", "info": ""}
+{"filename": "src/text/sphinx_prolog_infobox.md", "lineno": 88, "status": "unchecked", "code": 0, "uri": "#sec-sphinxprolog-usage", "info": ""}
+{"filename": "src/text/sphinx_prolog_infobox.md", "lineno": 154, "status": "broken", "code": 0, "uri": "https://github.com/simply-logical/sphinx-prolog#information_source-infobox-directive", "info": "Anchor 'information_source-infobox-directive' not found"}
+{"filename": "src/text/sphinx_prolog_infobox.md", "lineno": 69, "status": "working", "code": 0, "uri": "https://jupyterbook.org/content/content-blocks.html#notes-warnings-and-other-admonitions", "info": ""}
+{"filename": "src/text/sphinx_prolog_infobox.md", "lineno": 4, "status": "working", "code": 0, "uri": "https://jupyterbook.org/content/content-blocks.html#notes-warnings-and-other-admonitions", "info": ""}
+{"filename": "src/text/sphinx_prolog_infobox.md", "lineno": 69, "status": "working", "code": 0, "uri": "https://jupyterbook.org/reference/cheatsheet.html#admonitions", "info": ""}
+{"filename": "src/text/sphinx_prolog_infobox.md", "lineno": 147, "status": "working", "code": 0, "uri": "https://jupyterbook.org/content/citations.html#referencing-overview", "info": ""}
+{"filename": "src/text/sphinx_prolog_pprolog.md", "lineno": 54, "status": "unchecked", "code": 0, "uri": "#sec-sphinxprolog", "info": ""}
+{"filename": "src/text/sphinx_prolog_pprolog.md", "lineno": 54, "status": "unchecked", "code": 0, "uri": "#sec-sphinxprolog-usage", "info": ""}
+{"filename": "src/text/sphinx_prolog_pprolog.md", "lineno": 29, "status": "broken", "code": 0, "uri": "https://book.simply-logical.space/src/text/1_part_i/2.1.html#propositional-clausal-logic", "info": "404 Client Error: Not Found for url: https://book.simply-logical.space/src/text/1_part_i/2.1.html"}
+{"filename": "src/text/sphinx_prolog_pprolog.md", "lineno": 84, "status": "broken", "code": 0, "uri": "https://github.com/simply-logical/sphinx-prolog#test_tube-pseudo-prolog-syntax-highlighting", "info": "Anchor 'test_tube-pseudo-prolog-syntax-highlighting' not found"}
+{"filename": "src/text/sphinx_prolog_pprolog.md", "lineno": 4, "status": "working", "code": 0, "uri": "https://jupyterbook.org/reference/cheatsheet.html#code-and-syntax-highlighting", "info": ""}
+{"filename": "src/text/sphinx_prolog_pprolog.md", "lineno": 37, "status": "working", "code": 0, "uri": "https://jupyterbook.org/reference/cheatsheet.html#code-and-syntax-highlighting", "info": ""}
