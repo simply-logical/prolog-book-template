@@ -173,6 +173,13 @@
    </i>
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/simply-logical/prolog-book-template">
+   GitHub Template
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
 </ul>
 
 </nav> <!-- To handle the deprecated key -->
@@ -252,6 +259,30 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup">
+   Setup
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#configuration">
+   Configuration
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#content">
+   Content
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -261,6 +292,167 @@
                 
   <div class="section" id="jupyter-book">
 <span id="sec-jupyterbook"></span><h1>Jupyter Book<a class="headerlink" href="#jupyter-book" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://jupyterbook.org/">Jupyter Book</a> is a static page generator based on <a class="reference external" href="https://www.sphinx-doc.org/">Sphinx</a> – the
+documentation engine for Python.
+To get started with your first Prolog-infused Jupyter Book, clone the GitHub
+repository holding the source of this book (or your own fork or copy of the
+template) with</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/simply-logical/prolog-book-template.git
+</pre></div>
+</div>
+<p>Then, enter the book directory</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> prolog-book-template
+</pre></div>
+</div>
+<p>before installing the dependencies and building the book.</p>
+<div class="section" id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
+<p>To set up the environment we need to install two Python dependencies:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pypi.org/project/jupyter-book/"><code class="docutils literal notranslate"><span class="pre">jupyter-book</span></code></a> – the Jupyter Book platform; and</p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/sphinx-prolog/"><code class="docutils literal notranslate"><span class="pre">sphinx-prolog</span></code></a> – our custom Prolog extension for Jupyter Book and Sphinx.</p></li>
+</ul>
+<p>Jupyter Book is required in version <code class="docutils literal notranslate"><span class="pre">0.10.0</span></code> or higher, and Sphinx Python in
+version <code class="docutils literal notranslate"><span class="pre">0.4</span></code> or higher.
+You can install these dependencies manually with</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install <span class="s2">&quot;jupyter-book&gt;=0.10.0&quot;</span>
+pip install <span class="s2">&quot;sphinx-prolog&gt;=0.4&quot;</span>
+</pre></div>
+</div>
+<p>or by using the <a class="reference external" href="https://github.com/simply-logical/prolog-book-template/blob/master/requirements.txt"><code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code></a> file</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install -r requirements.txt
+</pre></div>
+</div>
+<p>Now, you can build the book by executing</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter-book build .
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jb build .
+</pre></div>
+</div>
+<p>for short.
+This will compose the HTML version of the book and place it in the
+<code class="docutils literal notranslate"><span class="pre">_build/html</span></code> directory.
+You can either open the <code class="docutils literal notranslate"><span class="pre">_build/html/index.html</span></code> file directly, or use the
+built-in Python HTTP server by executing</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python -m http.server --directory _build/html
+</pre></div>
+</div>
+<p>and then pointing your web browser to <a class="reference external" href="http://localhost:8000">http://localhost:8000</a>.</p>
+</div>
+<div class="section" id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<p>The configuration of this Jupyter Book can be found in the <a class="reference external" href="https://github.com/simply-logical/prolog-book-template/blob/master/_config.yml"><code class="docutils literal notranslate"><span class="pre">_config.yml</span></code></a>
+file.
+It holds the basic parameters and build options of the book.
+By default the build process will only copy the necessary files into the target
+directory (<code class="docutils literal notranslate"><span class="pre">_build/html</span></code>), which will then be deployed.
+To include <a class="reference internal" href="github.html#sec-github-github-pages"><span class="std std-ref">auxiliary files</span></a> needed for proper
+functioning of our GitHub Pages deployment, we need to list them under the
+<code class="docutils literal notranslate"><span class="pre">sphinx.config.html_extra_path</span></code> key in the <a class="reference external" href="https://github.com/simply-logical/prolog-book-template/blob/master/_config.yml"><code class="docutils literal notranslate"><span class="pre">_config.yml</span></code></a> file</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">sphinx</span><span class="p">:</span>
+  <span class="nt">config</span><span class="p">:</span>
+    <span class="nt">html_extra_path</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">README.md</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">LICENCE</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">CNAME</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">.nojekyll</span>
+</pre></div>
+</div>
+<p>(While <a class="reference external" href="https://github.com/simply-logical/prolog-book-template/blob/master/README.md"><code class="docutils literal notranslate"><span class="pre">README.md</span></code></a> and <a class="reference external" href="https://github.com/simply-logical/prolog-book-template/blob/master/LICENCE"><code class="docutils literal notranslate"><span class="pre">LICENCE</span></code></a> are not necessary, they ensure a pleasant
+look of our <a class="reference external" href="https://github.com/simply-logical/prolog-book-template/tree/gh-pages"><code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> branch</a>.)</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>When using this template, you should change the Google Analytics ID defined by
+the</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span>  <span class="nt">google_analytics_id</span><span class="p">:</span> <span class="s">&#39;261828628&#39;</span>
+</pre></div>
+</div>
+<p>line (under the <code class="docutils literal notranslate"><span class="pre">html</span></code> key) in <a class="reference external" href="https://github.com/simply-logical/prolog-book-template/blob/master/_config.yml"><code class="docutils literal notranslate"><span class="pre">_config.yml</span></code></a> or remove it altogether if you
+do not have your own Google Analytics token.
+Similarly, you should set the book repository URL to your own GitHub repository
+by amending the</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span>  <span class="nt">url</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">https://github.com/simply-logical/prolog-book-template</span>
+</pre></div>
+</div>
+<p>line found under the <code class="docutils literal notranslate"><span class="pre">repository</span></code> key.</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For more information about configuring Jupyter Book see the
+<a class="reference external" href="https://jupyterbook.org/customize/config.html">official documentation</a>.</p>
+</div>
+<hr class="docutils" />
+<p>It is also possible to include custom <em>CSS rules</em> and <em>JavaScript scripts</em> in
+your book by placing their respective files in the <a class="reference external" href="https://github.com/simply-logical/prolog-book-template/tree/master/_static"><code class="docutils literal notranslate"><span class="pre">_static</span></code></a> directory.
+All the files with <code class="docutils literal notranslate"><span class="pre">.css</span></code> and <code class="docutils literal notranslate"><span class="pre">.js</span></code> extensions located in this folder
+will automatically be copied into your HTML book build and linked in the
+header of each page.
+This template uses the <code class="docutils literal notranslate"><span class="pre">_static</span></code> folder to slightly customise the book
+appearance with the <a class="reference external" href="https://github.com/simply-logical/prolog-book-template/tree/master/_static/prolog-book-template.css"><code class="docutils literal notranslate"><span class="pre">_static/prolog-book-template.css</span></code></a> file.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For more information about the <code class="docutils literal notranslate"><span class="pre">_static</span></code> directory see the
+<a class="reference external" href="https://jupyterbook.org/advanced/sphinx.html?highlight=_static#custom-css-or-javascript">official documentation</a>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Additional important Jupyter Book configuration parameters are under the
+<code class="docutils literal notranslate"><span class="pre">sphinx.extra_extensions</span></code> and <code class="docutils literal notranslate"><span class="pre">sphinx.config</span></code> keys</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">sphinx</span><span class="p">:</span>
+  <span class="nt">extra_extensions</span><span class="p">:</span>
+    <span class="c1"># Load sphinx-prolog &lt;https://github.com/simply-logical/sphinx-prolog&gt;</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">sphinx_prolog.infobox</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">sphinx_prolog.pprolog</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">sphinx_prolog.solex</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">sphinx_prolog.swish</span>
+  <span class="nt">config</span><span class="p">:</span>
+    <span class="c1"># Configure sphinx-prolog &lt;https://github.com/simply-logical/sphinx-prolog&gt;</span>
+    <span class="nt">sp_exercise_directory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/src/ex/</span>
+    <span class="nt">sp_code_directory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/src/code/</span>
+    <span class="nt">sp_swish_url</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">https://swish.simply-logical.space/</span>
+    <span class="nt">sp_swish_book_url</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">https://book-template.simply-logical.space/</span>
+    <span class="nt">sp_swish_hide_examples</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+</pre></div>
+</div>
+<p>The first group loads external plugins – in particular, the four modules of
+our custom <a class="reference external" href="https://pypi.org/project/sphinx-prolog/"><code class="docutils literal notranslate"><span class="pre">sphinx-prolog</span></code></a> extension.
+The latter group configures Sphinx and its extensions – in our case, the
+behaviour of our extension.
+See the <a class="reference internal" href="sphinx_prolog.html#sec-sphinxprolog"><span class="std std-ref">sphinx-prolog Extension</span></a> section for more details.</p>
+</div>
+</div>
+<div class="section" id="content">
+<h2>Content<a class="headerlink" href="#content" title="Permalink to this headline">¶</a></h2>
+<p>The book content is controlled by the <a class="reference external" href="https://github.com/simply-logical/prolog-book-template/blob/master/_toc.yml"><code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code></a> file.
+It defines the <em>part</em>, <em>chapter</em> and <em>section</em> structure of the book,
+as well as their numbering and source paths.
+To improve the folder structure of the book template, all of the content
+building blocks are kept in the <a class="reference external" href="https://github.com/simply-logical/prolog-book-template/tree/master/src"><code class="docutils literal notranslate"><span class="pre">src</span></code></a> directory:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/simply-logical/prolog-book-template/tree/master/src/img"><code class="docutils literal notranslate"><span class="pre">src/img</span></code></a> holds static images such as logos and favicons;</p></li>
+<li><p><a class="reference external" href="https://github.com/simply-logical/prolog-book-template/tree/master/src/fig"><code class="docutils literal notranslate"><span class="pre">src/fig</span></code></a> holds figures; and</p></li>
+<li><p><a class="reference external" href="https://github.com/simply-logical/prolog-book-template/tree/master/src/text"><code class="docutils literal notranslate"><span class="pre">src/text</span></code></a> holds markdown files with the book text.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">src</span></code> directory holds two additional folders:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/simply-logical/prolog-book-template/tree/master/src/code"><code class="docutils literal notranslate"><span class="pre">src/code</span></code></a> with Prolog code snippets used to build interactive SWISH
+blocks and</p></li>
+<li><p><a class="reference external" href="https://github.com/simply-logical/prolog-book-template/tree/master/src/ex"><code class="docutils literal notranslate"><span class="pre">src/ex</span></code></a> with exercises and solutions content,</p></li>
+</ul>
+<p>which are specific to our <code class="docutils literal notranslate"><span class="pre">sphinx-prolog</span></code> extension.
+They are discussed in more detail in <a class="reference internal" href="sphinx_prolog_swish.html#sec-sphinxprolog-swish"><span class="std std-ref">SWISH Code and Query Blocks</span></a> and
+<a class="reference internal" href="sphinx_prolog_solex.html#sec-sphinxprolog-solex"><span class="std std-ref">exercise and solution Blocks</span></a> sections respectively.</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For more information about the <code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code> file structure see the
+<a class="reference external" href="https://jupyterbook.org/customize/toc.html">official documentation</a>.</p>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">

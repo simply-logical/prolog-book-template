@@ -35,7 +35,8 @@ Then, the book can be built with `jb build .`.
 ```{note}
 For more details about installing necessary dependencies and building this book
 see the [`README.md`](https://github.com/simply-logical/prolog-book-template#building-the-book)
-file included in the GitHub repository holding the source of this book.
+file included in the [GitHub repository](https://github.com/simply-logical/prolog-book-template)
+that holds the source of this book.
 ```
 
 ## Contents ##

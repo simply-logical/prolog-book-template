@@ -173,6 +173,13 @@
    </i>
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/simply-logical/prolog-book-template">
+   GitHub Template
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
 </ul>
 
 </nav> <!-- To handle the deprecated key -->
@@ -252,6 +259,42 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#source-code-hosting">
+   Source Code Hosting
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#github-pages">
+   GitHub Pages
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deployment">
+     Deployment
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#setup">
+     Setup
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#custom-domain">
+     Custom Domain
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -261,6 +304,116 @@
                 
   <div class="section" id="github">
 <span id="sec-github"></span><h1>GitHub<a class="headerlink" href="#github" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/">GitHub</a> is a great code repository and static website host; it makes
+developing and publishing Jupyter Books incredibly simple.</p>
+<div class="section" id="source-code-hosting">
+<h2>Source Code Hosting<a class="headerlink" href="#source-code-hosting" title="Permalink to this headline">¶</a></h2>
+<p>The template for building interactive Prolog books is available in the
+<a class="reference external" href="https://github.com/simply-logical/prolog-book-template">simply-logical/prolog-book-template</a> GitHub repository (which is also the
+source of this book/documentation).
+You can either <a class="reference external" href="https://github.com/simply-logical/prolog-book-template"><em>fork this repository</em></a>, or download the source as a
+<a class="reference external" href="https://github.com/simply-logical/prolog-book-template/archive/master.zip"><em>ZIP archive</em></a> and then push it to your own repository.
+There are a few changes to the configuration files (<code class="docutils literal notranslate"><span class="pre">CNAME</span></code>, <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code> and,
+possibly, <code class="docutils literal notranslate"><span class="pre">.github/workflows/build-and-deploy.yml</span></code>) and the settings of your
+repository that you need to make – they are described below and in the
+<a class="reference internal" href="jupyter_book.html#sec-jupyterbook"><span class="std std-ref">Jupyter Book</span></a> section.</p>
+</div>
+<div class="section" id="github-pages">
+<span id="sec-github-github-pages"></span><h2>GitHub Pages<a class="headerlink" href="#github-pages" title="Permalink to this headline">¶</a></h2>
+<p>A built book can either be deployed to a separate GitHub repository or placed
+in a designated branch of the same repository, used exclusively for serving
+your GitHub Page.
+The latter approach is more coherent and can be easily automated with a
+<a class="reference external" href="https://github.com/features/actions">GitHub Action</a>.</p>
+<div class="section" id="deployment">
+<h3>Deployment<a class="headerlink" href="#deployment" title="Permalink to this headline">¶</a></h3>
+<p>This book template uses the latter approach; it is set up to automatically
+deploy the book source taken from the latest commit to the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch into
+the <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> branch.
+The script configuring this GitHub Action is included in the template
+repository and is located in <a class="reference external" href="https://github.com/simply-logical/prolog-book-template/blob/master/.github/workflows/build-and-deploy.yml"><code class="docutils literal notranslate"><span class="pre">.github/workflows/build-and-deploy.yml</span></code></a>.
+It sets up Python, installs the dependencies (via <a class="reference external" href="https://github.com/simply-logical/prolog-book-template/blob/master/requirements.txt"><code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code></a>) needed
+to build the book, builds the book and deploys the HTML files to the
+<code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> branch.
+These steps are performed for each new commit made to <em>any branch</em>,
+<strong>with the exception of the deployment step, which is limited to commits made
+to the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch</strong>.
+(More details about the dependencies and the process of building the book are
+given in the <a class="reference internal" href="jupyter_book.html#sec-jupyterbook"><span class="std std-ref">Jupyter Book</span></a> section.)</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The deployment step of the GitHub Action workflow is conditioned on the
+presence of a <code class="docutils literal notranslate"><span class="pre">master</span></code> branch.
+If you desire to deploy your book from a different branch, you need to amend
+the</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span>      <span class="nt">if</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.ref == &#39;refs/heads/master&#39;</span>
+</pre></div>
+</div>
+<p>statement in the <a class="reference external" href="https://github.com/simply-logical/prolog-book-template/blob/master/.github/workflows/build-and-deploy.yml"><code class="docutils literal notranslate"><span class="pre">.github/workflows/build-and-deploy.yml</span></code></a> file with</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span>      <span class="nt">if</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.ref == &#39;refs/heads/your-branch-name&#39;</span>
+</pre></div>
+</div>
+</div>
+<p>If you prefer to deploy the book manually, delete the
+<a class="reference external" href="https://github.com/simply-logical/prolog-book-template/blob/master/.github/workflows/build-and-deploy.yml"><code class="docutils literal notranslate"><span class="pre">.github/workflows/build-and-deploy.yml</span></code></a> file from your repository.
+Then, copy the content of the <code class="docutils literal notranslate"><span class="pre">_build/html</span></code> directory to your static webpage
+hosting repository of choice.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>See the <a class="reference external" href="https://github.com/simply-logical/prolog-book-template/tree/gh-pages"><code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> branch</a> of the GitHub repository holding the source of
+this book as a deployment example.
+You may also be interested in the <a class="reference external" href="https://github.com/simply-logical/prolog-book-template/actions">log</a> of the GitHub Action responsible for
+its automated deployment.</p>
+</div>
+</div>
+<div class="section" id="setup">
+<h3>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h3>
+<p>GitHub Pages use <a class="reference external" href="https://jekyllrb.com/">Jekyll</a> as the default static page generator.
+Since our book requires a custom build environment – <a class="reference external" href="https://jupyterbook.org/">Jupyter Book</a> – Jekyll
+must be disabled.
+This is achieved by placing an empty file named <a class="reference external" href="https://github.com/simply-logical/prolog-book-template/blob/master/.nojekyll"><code class="docutils literal notranslate"><span class="pre">.nojekyll</span></code></a> at the
+<em>source location</em> chosen for GitHub Pages deployment.
+For this book, it is the root of the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch in the
+<a class="reference external" href="https://github.com/simply-logical/prolog-book-template">simply-logical/prolog-book-template</a> repository.
+When the book is built, this file is copied over to the build location
+– <code class="docutils literal notranslate"><span class="pre">_build/html</span></code> – by Jupyter Book (see the <a class="reference internal" href="jupyter_book.html#sec-jupyterbook"><span class="std std-ref">Jupyter Book</span></a> section for
+more details), from where it is deployed to the <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> branch by our
+GitHub Action.</p>
+<p><img alt="GitHub Pages configuration panel" src="../../_images/gh-pages.png" /></p>
+<p>The source location of the GitHub Pages deployment can be set to a
+<em>specific branch</em>, and customised even further by choosing a
+<em>specific directory</em> within this branch – see the <em>GitHub Pages</em> section in
+the <em>Options</em> tab in the <em>Settings</em> panel of your repository.
+It is also where you need to enable and configure your GitHub Page deployment
+in the first place.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See <a class="reference external" href="https://docs.github.com/en/github/working-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site">GitHub Pages documentation</a> for more details.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Before you can choose the <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> branch to be your GitHub Pages deployment
+source, this branch first needs to exist.
+If you use the GitHub Actions script, this branch will be automatically created
+when you push your book source to the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch.</p>
+</div>
+</div>
+<div class="section" id="custom-domain">
+<h3>Custom Domain<a class="headerlink" href="#custom-domain" title="Permalink to this headline">¶</a></h3>
+<p>GitHub Pages allow to use a <a class="reference external" href="https://docs.github.com/en/github/working-with-github-pages/configuring-a-custom-domain-for-your-github-pages-site"><em>custom domain</em></a> with your website.
+It can either be set through the <em>Custom domain</em> option in the repository
+settings (see the figure above) or by placing a text file named <a class="reference external" href="https://github.com/simply-logical/prolog-book-template/blob/master/CNAME"><code class="docutils literal notranslate"><span class="pre">CNAME</span></code></a>
+– holding your custom domain address – in the root of your repository.
+You may also want to generate an SSL certificate for your domain to enable
+HTTPS (again, see the figure above).</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>When deploying your book with GitHub Pages using our template make sure
+to either remove the <a class="reference external" href="https://github.com/simply-logical/prolog-book-template/blob/master/CNAME"><code class="docutils literal notranslate"><span class="pre">CNAME</span></code></a> file or replace our domain address with yours
+to prevent deployment conflicts.</p>
+</div>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
