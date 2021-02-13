@@ -51,6 +51,7 @@ python -m http.server --directory _build/html
 ```
 and then pointing your web browser to <http://localhost:8000>.
 
+(sec:jupyterbook:config)=
 ## Configuration ##
 
 The configuration of this Jupyter Book can be found in the [`_config.yml`]
@@ -60,7 +61,7 @@ By default the build process will only copy the necessary files into the target
 directory (`_build/html`), which will then be deployed.
 To include {ref}`auxiliary files <sec:github:github-pages>` needed for proper
 functioning of our GitHub Pages deployment, we need to list them under the
-`sphinx.config.html_extra_path` key in the [`_config.yml`] file
+`sphinx.config.html_extra_path` key in the [`_config.yml`] file.
 ```yaml
 sphinx:
   config:
@@ -111,7 +112,7 @@ For more information about the `_static` directory see the
 
 :::{note}
 Additional important Jupyter Book configuration parameters are under the
-`sphinx.extra_extensions` and `sphinx.config` keys
+`sphinx.extra_extensions` and `sphinx.config` keys.
 ```yaml
 sphinx:
   extra_extensions:
@@ -122,8 +123,8 @@ sphinx:
     - sphinx_prolog.swish
   config:
     # Configure sphinx-prolog <https://github.com/simply-logical/sphinx-prolog>
-    sp_exercise_directory: /src/ex/
-    sp_code_directory: /src/code/
+    sp_exercise_directory: src/ex/
+    sp_code_directory: src/code/
     sp_swish_url: https://swish.simply-logical.space/
     sp_swish_book_url: https://book-template.simply-logical.space/
     sp_swish_hide_examples: true

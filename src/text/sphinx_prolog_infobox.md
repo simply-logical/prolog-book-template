@@ -1,7 +1,7 @@
 (sec:sphinxprolog:infobox)=
 # `infobox` Blocks #
 
-Jupyter Book implements a wealth of [admonition boxes] such as
+Jupyter Book implements a wealth of [admonition boxes].
 
 ``````{panels}
 `````{warning}
@@ -10,7 +10,7 @@ Jupyter Book implements a wealth of [admonition boxes] such as
 content
 ```
 ````
-syntax for *warnings*;
+Syntax for *warnings*.
 `````
 
 ---
@@ -21,7 +21,7 @@ syntax for *warnings*;
 content
 ```
 ````
-syntax for *notes*;
+Syntax for *notes*.
 `````
 ``````
 
@@ -32,7 +32,7 @@ syntax for *notes*;
 content
 ```
 ````
-syntax for *tips*; and
+Syntax for *tips*.
 `````
 
 ---
@@ -43,7 +43,7 @@ syntax for *tips*; and
 content
 ```
 ````
-syntax for *see also*s.
+Syntax for *see alsos*.
 `````
 ``````
 
@@ -77,7 +77,7 @@ are [also available].
 
 To enable the `sphinx_prolog.infobox` extension module in your Jupyter Book,
 include its name in your `_config.yml` file under the `sphinx.extra_extensions`
-key
+key.
 ```yaml
 sphinx:
   extra_extensions:
@@ -115,6 +115,7 @@ By hovering your mouse over the title section of an Information Box
 to the right of the title text.
 By clicking it you will get a link pointing directly to this Information Box.
 
+(sec:sphinxprolog:infobox:ref)=
 ### Tag and Reference ###
 
 In addition to the external links provided under the hyper-link markers (¶),
@@ -145,7 +146,7 @@ For example, the first Information Box can be referenced as
 {ref}`Custom Reference to the First Box <ibox:one>`.
 
 :::{seealso}
-For more infomration, see the [referencing overview] available in the
+For more information, see the [referencing overview] available in the
 Jupyter Book documentation.
 :::
 
