@@ -342,7 +342,7 @@ built-in Python HTTP server by executing</p>
 <p>and then pointing your web browser to <a class="reference external" href="http://localhost:8000">http://localhost:8000</a>.</p>
 </div>
 <div class="section" id="configuration">
-<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<span id="sec-jupyterbook-config"></span><h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
 <p>The configuration of this Jupyter Book can be found in the <a class="reference external" href="https://github.com/simply-logical/prolog-book-template/blob/master/_config.yml"><code class="docutils literal notranslate"><span class="pre">_config.yml</span></code></a>
 file.
 It holds the basic parameters and build options of the book.
@@ -350,7 +350,7 @@ By default the build process will only copy the necessary files into the target
 directory (<code class="docutils literal notranslate"><span class="pre">_build/html</span></code>), which will then be deployed.
 To include <a class="reference internal" href="github.html#sec-github-github-pages"><span class="std std-ref">auxiliary files</span></a> needed for proper
 functioning of our GitHub Pages deployment, we need to list them under the
-<code class="docutils literal notranslate"><span class="pre">sphinx.config.html_extra_path</span></code> key in the <a class="reference external" href="https://github.com/simply-logical/prolog-book-template/blob/master/_config.yml"><code class="docutils literal notranslate"><span class="pre">_config.yml</span></code></a> file</p>
+<code class="docutils literal notranslate"><span class="pre">sphinx.config.html_extra_path</span></code> key in the <a class="reference external" href="https://github.com/simply-logical/prolog-book-template/blob/master/_config.yml"><code class="docutils literal notranslate"><span class="pre">_config.yml</span></code></a> file.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">sphinx</span><span class="p">:</span>
   <span class="nt">config</span><span class="p">:</span>
     <span class="nt">html_extra_path</span><span class="p">:</span>
@@ -399,7 +399,7 @@ appearance with the <a class="reference external" href="https://github.com/simpl
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Additional important Jupyter Book configuration parameters are under the
-<code class="docutils literal notranslate"><span class="pre">sphinx.extra_extensions</span></code> and <code class="docutils literal notranslate"><span class="pre">sphinx.config</span></code> keys</p>
+<code class="docutils literal notranslate"><span class="pre">sphinx.extra_extensions</span></code> and <code class="docutils literal notranslate"><span class="pre">sphinx.config</span></code> keys.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">sphinx</span><span class="p">:</span>
   <span class="nt">extra_extensions</span><span class="p">:</span>
     <span class="c1"># Load sphinx-prolog &lt;https://github.com/simply-logical/sphinx-prolog&gt;</span>
@@ -409,8 +409,8 @@ appearance with the <a class="reference external" href="https://github.com/simpl
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">sphinx_prolog.swish</span>
   <span class="nt">config</span><span class="p">:</span>
     <span class="c1"># Configure sphinx-prolog &lt;https://github.com/simply-logical/sphinx-prolog&gt;</span>
-    <span class="nt">sp_exercise_directory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/src/ex/</span>
-    <span class="nt">sp_code_directory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/src/code/</span>
+    <span class="nt">sp_exercise_directory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">src/ex/</span>
+    <span class="nt">sp_code_directory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">src/code/</span>
     <span class="nt">sp_swish_url</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">https://swish.simply-logical.space/</span>
     <span class="nt">sp_swish_book_url</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">https://book-template.simply-logical.space/</span>
     <span class="nt">sp_swish_hide_examples</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>

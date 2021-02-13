@@ -259,6 +259,59 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup">
+   Setup
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#configuration">
+   Configuration
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#setting-up-external-files">
+     Setting up External Files
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#custom-naming">
+     Custom Naming
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#usage">
+   Usage
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tagging">
+     Tagging
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#referencing">
+     Referencing
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#loading-external-files">
+     Loading External Files
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -268,6 +321,454 @@
                 
   <div class="section" id="exercise-and-solution-blocks">
 <span id="sec-sphinxprolog-solex"></span><h1><code class="docutils literal notranslate"><span class="pre">exercise</span></code> and <code class="docutils literal notranslate"><span class="pre">solution</span></code> Blocks<a class="headerlink" href="#exercise-and-solution-blocks" title="Permalink to this headline">¶</a></h1>
+<p>Sometimes you may want to set some (programming) <em>exercises</em> for your readers,
+and help them to learn by also publishing corresponding <em>solutions</em>.
+While Jupyter Book supports enumerated environments for figures, tables,
+equations and (part/chapter/section) headers, it lacks support for
+(enumerable, referenceable and interlinked) exercise and solution boxes.
+Our <code class="docutils literal notranslate"><span class="pre">sphinx_prolog.solex</span></code> Sphinx extension module addresses this shortcoming
+by implementing two coupled boxes – <code class="docutils literal notranslate"><span class="pre">exercise</span></code> and <code class="docutils literal notranslate"><span class="pre">solution</span></code> – based on
+Jupyter Book admonitions.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See the <a class="reference internal" href="sphinx_prolog_infobox.html#sec-sphinxprolog-infobox"><span class="std std-ref">infobox Blocks</span></a> section for more information about
+<a class="reference external" href="https://jupyterbook.org/reference/cheatsheet.html#admonitions">Jupyter Book admonitions</a>.</p>
+</div>
+<div class="section" id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
+<p>To enable the <code class="docutils literal notranslate"><span class="pre">sphinx_prolog.solex</span></code> extension module in your Jupyter Book,
+include its name in your <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code> file under the <code class="docutils literal notranslate"><span class="pre">sphinx.extra_extensions</span></code>
+key</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">sphinx</span><span class="p">:</span>
+  <span class="nt">extra_extensions</span><span class="p">:</span>
+    <span class="c1"># Load sphinx-prolog &lt;https://github.com/simply-logical/sphinx-prolog&gt;</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">sphinx_prolog.solex</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See the <a class="reference internal" href="sphinx_prolog.html#sec-sphinxprolog-usage"><span class="std std-ref">Usage</span></a> section of the <a class="reference internal" href="sphinx_prolog.html#sec-sphinxprolog"><span class="std std-ref">sphinx-prolog Extension</span></a>
+page for more details.</p>
+</div>
+</div>
+<div class="section" id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<p>You can configure and personalise the <code class="docutils literal notranslate"><span class="pre">sphinx_prolog.solex</span></code> extension
+in a number of ways.
+For example, the content of <em>exercise</em> and <em>solution</em> boxes can be sourced
+from different locations depending on the user’s preferences.
+It can either be provided explicitly within a document or loaded from an
+external markdown file – an option that allows to streamline repeating the
+exercise text in its corresponding solution box.</p>
+<p>By default, each <em>exercise</em> is assigned a sequential number and it is named
+according to the “<em>Exercise #</em>” pattern.
+Similarly, a <em>solution</em> linked to a particular exercise reuses its sequential
+number with the “<em>Solution #</em>” template.
+Both of these naming patterns can be adapted to one’s liking, e.g., to
+“<em>Task #</em>” and “<em>Answer #</em>”.</p>
+<div class="section" id="setting-up-external-files">
+<span id="sec-sphinxprolog-solex-setup-files"></span><h3>Setting up External Files<a class="headerlink" href="#setting-up-external-files" title="Permalink to this headline">¶</a></h3>
+<p>The content of exercise and solution boxes can either be:</p>
+<ul class="simple">
+<li><p>provided manually within each box, or</p></li>
+<li><p>loaded from an external markdown file.</p></li>
+</ul>
+<p>The latter possibility has been implemented to streamline inclusion of
+solution boxes.
+Since you may decide to collect all the solutions on a single page,
+say in the appendix, it may be useful to repeat the exercise text for clarity.
+In this case you only need to edit the exercise source file to update the
+text displayed in the <em>exercise</em> and <em>solution</em> blocks pair.
+See the <a class="reference internal" href="#sec-sphinxprolog-solex-use-files"><span class="std std-ref">Loading External Files</span></a> section of this page for more
+details.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>An exercise block and its corresponding solution box may be placed on
+two <strong>different pages</strong> in your book.</p>
+</div>
+<p>To load <em>exercise</em> and <em>solution</em> blocks from external markdown files,
+they must be placed in a dedicated directory.
+The <code class="docutils literal notranslate"><span class="pre">sphinx_prolog.solex</span></code> extension is then informed of this location via
+the <code class="docutils literal notranslate"><span class="pre">sp_exercise_directory</span></code> configuration parameter, which is placed under
+the <code class="docutils literal notranslate"><span class="pre">sphinx.config</span></code> key in the <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code> file.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">sphinx</span><span class="p">:</span>
+  <span class="nt">config</span><span class="p">:</span>
+    <span class="c1"># Configure sphinx-prolog &lt;https://github.com/simply-logical/sphinx-prolog&gt;</span>
+    <span class="nt">sp_exercise_directory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">src/ex/</span>
+</pre></div>
+</div>
+<p>This path must be relative to the root directory of your book, i.e., the place
+where you hold your <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code> file.
+It must also be added to the <code class="docutils literal notranslate"><span class="pre">exclude_patterns</span></code> configuration parameter
+to exclude it from the book build sources.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">exclude_patterns</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">src/ex</span>
+</pre></div>
+</div>
+<p>This is to avoid build errors since Jupyter Book expects all of the markdown
+files placed below its root directory to be included in the table of content.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See the <a class="reference internal" href="jupyter_book.html#sec-jupyterbook-config"><span class="std std-ref">Configuration</span></a> section of the <a class="reference internal" href="jupyter_book.html#sec-jupyterbook"><span class="std std-ref">Jupyter Book</span></a>
+page for more details about configuring your book.</p>
+</div>
+</div>
+<div class="section" id="custom-naming">
+<span id="sec-sphinxprolog-solex-naming"></span><h3>Custom Naming<a class="headerlink" href="#custom-naming" title="Permalink to this headline">¶</a></h3>
+<p>By default, exercise blocks are assigned a sequential number with a title
+based on the “<em>Exercise #</em>” template.
+Similarly, solutions reuse the sequential numbers of their corresponding
+exercises and are given a title based on the “<em>Solution #</em>” pattern.
+These templates can be changed in the Jupyter Book configuration file
+(<code class="docutils literal notranslate"><span class="pre">config.yml</span></code>) under the <code class="docutils literal notranslate"><span class="pre">sphinx.config.numfig_format</span></code> key.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">sphinx</span><span class="p">:</span>
+  <span class="nt">config</span><span class="p">:</span>
+    <span class="nt">numfig_format</span><span class="p">:</span>
+      <span class="nt">exercise</span><span class="p">:</span> <span class="s">&quot;Task</span><span class="nv"> </span><span class="s">%s&quot;</span>
+      <span class="nt">solution</span><span class="p">:</span> <span class="s">&quot;Answer</span><span class="nv"> </span><span class="s">%s&quot;</span>
+</pre></div>
+</div>
+<p>Custom formatters are strings with a special <code class="docutils literal notranslate"><span class="pre">%s</span></code> component that gets
+automatically replaced with the sequential number of a given exercise or
+solution.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See the <a class="reference internal" href="#sec-sphinxprolog-solex-tagging"><span class="std std-ref">Tagging</span></a> and
+<a class="reference internal" href="#sec-sphinxprolog-solex-referencing"><span class="std std-ref">Referencing</span></a> sections of this page for more
+details.
+Alternatively, refer to the <a class="reference external" href="https://jupyterbook.org/content/citations.html#referencing-overview">referencing overview</a> section of the
+Jupyter Book documentation.</p>
+</div>
+</div>
+</div>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<p>Exercise blocks are included with an admonition-like syntax, with their content
+explicitly stated in the definition statement.
+To build an exercise block use a triple-backtick fence with the <code class="docutils literal notranslate"><span class="pre">exercise</span></code>
+keyword wrapped in curly braces followed by a user-defined
+tag, i.e., <code class="docutils literal notranslate"><span class="pre">```{exercise}</span> <span class="pre">ex:my-tag</span></code></p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-header docutils">
+<p class="card-text">Outcome</p>
+</div>
+<div class="card-body docutils">
+<div class="admonition exercise" id="ex-one">
+<p class="card-title admonition-title"><span class="caption-number">Exercise 1 </span><a class="headerlink" href="#ex-one" title="Permalink to this exercise">¶</a><a href="#sol-one" class="solution-link" title="Go to the solution"></a></p>
+<p class="card-text">This is an exercise example.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-header docutils">
+<p class="card-text">Syntax</p>
+</div>
+<div class="card-body docutils">
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>```{exercise} ex:my-tag
+This is an exercise example.
+```
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Solution boxes follow a similar syntax with the <code class="docutils literal notranslate"><span class="pre">exercise</span></code> keyword replaced
+by <code class="docutils literal notranslate"><span class="pre">solution</span></code></p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-header docutils">
+<p class="card-text">Outcome</p>
+</div>
+<div class="card-body docutils">
+<div class="admonition solution" id="sol-one">
+<p class="card-title admonition-title">
+<span class="caption-number">Solution 1 </span><a class="headerlink" href="#sol-one" title="Permalink to this solution">¶</a><a href="#ex-one" class="exercise-link" title="Go to the exercise"></a></p>
+<p class="card-text">This is a solution example.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-header docutils">
+<p class="card-text">Syntax</p>
+</div>
+<div class="card-body docutils">
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>```{solution} ex:my-tag
+This is a solution example.
+```
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>By hovering your mouse over the title section of an exercise or a solution box
+(respectively, the green- and yellow-coloured bar at the top), a hyper-link
+marker (¶) will be revealed to the right of the title text
+(“<em>Exercise #</em>” and “<em>Solution #</em>” correspondingly).
+By clicking the marker you will get a link pointing directly to this particular
+exercise or solution box.</p>
+<div class="section" id="tagging">
+<span id="sec-sphinxprolog-solex-tagging"></span><h3>Tagging<a class="headerlink" href="#tagging" title="Permalink to this headline">¶</a></h3>
+<p>Definitions of both <em>exercise</em> and <em>solution</em> boxes <strong>require</strong> one parameter.
+For exercise blocks, it assigns a <strong>unique</strong> tag to this box and it
+<strong>must be prefixed</strong> with <code class="docutils literal notranslate"><span class="pre">ex:</span></code>.
+While not every exercise block requires a corresponding solution box,
+<strong>solution blocks can only be built by linking them to existing exercise
+boxes.</strong>
+This linking is achieved by reusing exercise tags when defining solution
+blocks.
+For example, to associate a solution to an existing exercise tagged
+with <code class="docutils literal notranslate"><span class="pre">ex:my-tag</span></code>, it needs to be defined as <code class="docutils literal notranslate"><span class="pre">```{solution}</span> <span class="pre">ex:my-tag</span></code>
+– see <a class="reference internal" href="#ex-one"><span class="std std-numref">Exercise 1</span></a> and <a class="reference internal" href="#sol-one"><span class="std std-numref">Solution 1</span></a> above.
+Linking guarantees that both blocks will have <strong>the same sequential number</strong>.
+It also embeds a hyper-link from an exercise to its solution – marked with
+the <span class="fa fa-check-double"></span> glyph on the right-hand side of the title bar
+– and vice versa (the <span class="fa fa-tasks"></span> glyph).
+Naturally, exercises without corresponding solutions will lack the
+<span class="fa fa-check-double"></span> solution hyper-link – see <a class="reference internal" href="#ex-two"><span class="std std-numref">Exercise 2</span></a> below.</p>
+<div class="admonition exercise" id="ex-two">
+<p class="admonition-title"><span class="caption-number">Exercise 2 </span><a class="headerlink" href="#ex-two" title="Permalink to this exercise">¶</a></p>
+<p>This is an example of an exercise without a solution.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Every solution must be linked to an existing exercise, but not all exercises
+require a solution.</p>
+</div>
+</div>
+<div class="section" id="referencing">
+<span id="sec-sphinxprolog-solex-referencing"></span><h3>Referencing<a class="headerlink" href="#referencing" title="Permalink to this headline">¶</a></h3>
+<p>Similar to <a class="reference internal" href="sphinx_prolog_infobox.html#sec-sphinxprolog-infobox-ref"><span class="std std-ref">Information Boxes</span></a>,
+solution and exercise blocks can be referenced with their tags.
+Exercises can be referenced with the <code class="docutils literal notranslate"><span class="pre">{ref}`ex:my-tag`</span></code> syntax, which
+produces a hyper-link displayed as “<em>exercise</em>”, e.g., <a class="reference internal" href="#ex-one"><span class="std std-ref">exercise</span></a> points to
+<a class="reference internal" href="#ex-one"><span class="std std-numref">Exercise 1</span></a>.
+The default “<em>exercise</em>” text can be manually substituted with a custom label
+using the <code class="docutils literal notranslate"><span class="pre">{ref}`custom</span> <span class="pre">exercise</span> <span class="pre">label</span> <span class="pre">&lt;ex:my-tag&gt;`</span></code> syntax, e.g.,
+<a class="reference internal" href="#ex-one"><span class="std std-ref">see this exercise</span></a> also points to <a class="reference internal" href="#ex-one"><span class="std std-numref">Exercise 1</span></a>.</p>
+<p>You can also reference exercises with their automatically assigned sequence
+number.
+This is achieved with the <code class="docutils literal notranslate"><span class="pre">{numref}`ex:my-tag`</span> </code> syntax – it was used to
+generate the numbered exercise references above.
+The hyper-link text displayed by this referencing strategy is controlled by
+the <em>exercise naming scheme</em> defined in the configuration file –
+see the <a class="reference internal" href="#sec-sphinxprolog-solex-naming"><span class="std std-ref">Custom Naming</span></a> section of this page for more
+information.
+If you wish to change the numbered hyper-link text for individual references,
+this can be achieved with the
+<code class="docutils literal notranslate"><span class="pre">{numref}`Custom</span> <span class="pre">Sequential</span> <span class="pre">Name</span> <span class="pre">%s</span> <span class="pre">&lt;ex:my-tag&gt;`</span></code> syntax.
+For example, <a class="reference internal" href="#ex-two"><span class="std std-numref">Challenge 2</span></a> is a custom numbered reference
+to <a class="reference internal" href="#ex-two"><span class="std std-numref">Exercise 2</span></a>.</p>
+<p>Hyper-linking <em>solution</em> boxes follows the same logic with one minor caveat.
+<strong>Because solutions reuse tags of their respective exercises,
+to reference a solution with an <code class="docutils literal notranslate"><span class="pre">ex:my-tag</span></code> label
+substitute the <code class="docutils literal notranslate"><span class="pre">ex:</span></code> prefix with <code class="docutils literal notranslate"><span class="pre">sol:</span></code>.</strong>
+For example, referencing <a class="reference internal" href="#sol-one"><span class="std std-numref">Solution 1</span></a> using its number is achieved with
+<code class="docutils literal notranslate"><span class="pre">{numref}`sol:my-tag`</span></code>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To reference a solution to an exercise tagged with <code class="docutils literal notranslate"><span class="pre">ex:my-tag</span></code>,
+substitute the <code class="docutils literal notranslate"><span class="pre">ex:</span></code> prefix with <code class="docutils literal notranslate"><span class="pre">sol:</span></code>, i.e., use <code class="docutils literal notranslate"><span class="pre">{ref}`sol:my-tag`</span></code>.</p>
+</div>
+</div>
+<div class="section" id="loading-external-files">
+<span id="sec-sphinxprolog-solex-use-files"></span><h3>Loading External Files<a class="headerlink" href="#loading-external-files" title="Permalink to this headline">¶</a></h3>
+<p>Thus far, each exercise and solution block embedded on this page had
+its content explicitly inserted when defining the box.
+Alternatively, this content can be loaded from an external markdown file –
+see the <a class="reference internal" href="#sec-sphinxprolog-solex-setup-files"><span class="std std-ref">setup instructions</span></a>
+described above.
+Assuming that you have an exercise file in the designated directory –
+in our case, <a class="reference external" href="https://github.com/simply-logical/prolog-book-template/blob/master/src/ex/exercise_file.md"><code class="docutils literal notranslate"><span class="pre">exercise_file.md</span></code></a> placed in <a class="reference external" href="https://github.com/simply-logical/prolog-book-template/blob/master/src/ex/"><code class="docutils literal notranslate"><span class="pre">src/ex/</span></code></a> – you can load it
+into a selected exercise box and its corresponding solution block.
+<strong>This is achieved by using a label derived from the name of this file.</strong>
+To this end, prepend the <code class="docutils literal notranslate"><span class="pre">ex:</span></code> prefix to and discard the <code class="docutils literal notranslate"><span class="pre">.md</span></code> extension from
+the exercise file name;
+for example, our <code class="docutils literal notranslate"><span class="pre">exercise_file.md</span></code> file can be loaded with
+<code class="docutils literal notranslate"><span class="pre">ex:exercise_file</span></code> tag.</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-header docutils">
+<p class="card-text">Outcome</p>
+</div>
+<div class="card-body docutils">
+<div class="admonition exercise" id="ex-exercise-file">
+<p class="card-title admonition-title"><span class="caption-number">Exercise 3 </span><a class="headerlink" href="#ex-exercise-file" title="Permalink to this exercise">¶</a><a href="#sol-exercise-file" class="solution-link" title="Go to the solution"></a></p>
+<p class="card-text">Exercise content loaded from the
+<a class="reference external" href="https://github.com/simply-logical/prolog-book-template/blob/master/src/ex/exercise_file.md"><code class="docutils literal notranslate"><span class="pre">src/ex/exercise_file.md</span></code></a>
+file.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-header docutils">
+<p class="card-text">Syntax</p>
+</div>
+<div class="card-body docutils">
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>```{exercise} ex:exercise_file
+```
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Building a solution box from the source file underlying its corresponding
+exercise follows the same pattern.</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-header docutils">
+<p class="card-text">Outcome</p>
+</div>
+<div class="card-body docutils">
+<div class="admonition solution" id="sol-exercise-file">
+<p class="card-title admonition-title">
+<span class="caption-number">Solution 3 </span><a class="headerlink" href="#sol-exercise-file" title="Permalink to this solution">¶</a><a href="#ex-exercise-file" class="exercise-link" title="Go to the exercise"></a></p>
+<p class="card-text">Exercise content loaded from the
+<a class="reference external" href="https://github.com/simply-logical/prolog-book-template/blob/master/src/ex/exercise_file.md"><code class="docutils literal notranslate"><span class="pre">src/ex/exercise_file.md</span></code></a>
+file.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-header docutils">
+<p class="card-text">Syntax</p>
+</div>
+<div class="card-body docutils">
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>```{solution} ex:exercise_file
+```
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To load the content of an exercise box and its corresponding solution block
+from a file, compose their label by prepending the <code class="docutils literal notranslate"><span class="pre">ex:</span></code> prefix to and
+discarding the <code class="docutils literal notranslate"><span class="pre">.md</span></code> extension from this file’s name.
+For example, a file named <code class="docutils literal notranslate"><span class="pre">exercise_file.md</span></code> can be loaded with the
+<code class="docutils literal notranslate"><span class="pre">ex:exercise_file</span></code> tag.</p>
+</div>
+<p>In some cases, you may wish to overwrite the content of an exercise or a
+solution box loaded from a file.
+To this end, provide the content of such a box explicitly when defining it –
+verbatim content takes precedence over the tag-matching file if one exists.
+This functionality may be helpful when you want the solution box to use a
+phrasing that is different to the content of the corresponding exercise.
+For example, when the exercise refers to a figure placed outside of its box
+on the same page, and you want include it in the solution box.</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-header docutils">
+<p class="card-text">Outcome</p>
+</div>
+<div class="card-body docutils">
+<div class="admonition exercise" id="ex-exercise-file-copy">
+<p class="card-title admonition-title"><span class="caption-number">Exercise 4 </span><a class="headerlink" href="#ex-exercise-file-copy" title="Permalink to this exercise">¶</a><a href="#sol-exercise-file-copy" class="solution-link" title="Go to the solution"></a></p>
+<p class="card-text">Exercise content loaded from the
+<a class="reference external" href="https://github.com/simply-logical/prolog-book-template/blob/master/src/ex/exercise_file_copy.md"><code class="docutils literal notranslate"><span class="pre">src/ex/exercise_file.md</span></code></a>
+file.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-header docutils">
+<p class="card-text">Syntax</p>
+</div>
+<div class="card-body docutils">
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>```{exercise} ex:exercise_file
+```
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-header docutils">
+<p class="card-text">Outcome</p>
+</div>
+<div class="card-body docutils">
+<div class="admonition solution" id="sol-exercise-file-copy">
+<p class="card-title admonition-title">
+<span class="caption-number">Solution 4 </span><a class="headerlink" href="#sol-exercise-file-copy" title="Permalink to this solution">¶</a><a href="#ex-exercise-file-copy" class="exercise-link" title="Go to the exercise"></a></p>
+<p class="card-text">Custom phrasing of the solution.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-header docutils">
+<p class="card-text">Syntax</p>
+</div>
+<div class="card-body docutils">
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>```{solution} ex:exercise_file
+Custom phrasing of the solution.
+```
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you look at the markdown source of this document, you will notice
+that the syntax of <a class="reference internal" href="#ex-exercise-file-copy"><span class="std std-numref">Exercise 4</span></a> and
+<a class="reference internal" href="#sol-exercise-file-copy"><span class="std std-numref">Solution 3</span></a> presented above uses a different tag
+(<code class="docutils literal notranslate"><span class="pre">ex:exercise_file</span></code>) than the actual definition of these blocks
+(<code class="docutils literal notranslate"><span class="pre">ex:exercise_file_copy</span></code>).
+Since two exercise boxes cannot be built from the same source file
+(due to a label conflict), we duplicated the <a class="reference external" href="https://github.com/simply-logical/prolog-book-template/blob/master/src/ex/exercise_file.md"><code class="docutils literal notranslate"><span class="pre">exercise_file.md</span></code></a> exercise
+source file with the <a class="reference external" href="https://github.com/simply-logical/prolog-book-template/blob/master/src/ex/exercise_file_copy.md"><code class="docutils literal notranslate"><span class="pre">exercise_file_copy.md</span></code></a> name.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To overwrite the content of an exercise or a solution box loaded from a file,
+simply provide its new content explicitly when defining it.</p>
+</div>
+<hr class="docutils" />
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For more information about the <em>Exercise and Solution</em> module see
+its <a class="reference external" href="https://github.com/simply-logical/sphinx-prolog#trophy-exercise-and-solution-directives"><em>technical documentation</em></a>.</p>
+</div>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">

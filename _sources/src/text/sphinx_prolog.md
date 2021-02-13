@@ -37,7 +37,7 @@ pip install sphinx-prolog
 To use the functionality implemented by this extension, first you need to
 enable the desired modules in your Jupyter Book or Sphinx configuration file.
 In Jupyter Book this is achieved by adding the selected extension module names
-under the `sphinx.extra_extensions` key in the `_config.yml` file
+under the `sphinx.extra_extensions` key in the `_config.yml` file.
 ```yaml
 sphinx:
   extra_extensions:
@@ -48,7 +48,7 @@ sphinx:
     - sphinx_prolog.swish
 ```
 In Sphinx, extensions are enabled by placing the module names in a Python list
-stored under the `extensions` variable in the `conf.py` file
+stored under the `extensions` variable in the `conf.py` file.
 ```Python
 ...
 extensions = ['sphinx_prolog.infobox',
