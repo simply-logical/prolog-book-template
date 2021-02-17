@@ -22,11 +22,11 @@ To set up the environment we need to install two Python dependencies:
 * [`sphinx-prolog`] -- our custom Prolog extension for Jupyter Book and Sphinx.
 
 Jupyter Book is required in version `0.10.0` or higher, and Sphinx Python in
-version `0.4` or higher.
+version `0.5` or higher.
 You can install these dependencies manually with
 ```bash
 pip install "jupyter-book>=0.10.0"
-pip install "sphinx-prolog>=0.4"
+pip install "sphinx-prolog>=0.5"
 ```
 or by using the [`requirements.txt`] file
 ```bash

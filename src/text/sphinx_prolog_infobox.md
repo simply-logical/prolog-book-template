@@ -1,5 +1,5 @@
 (sec:sphinxprolog:infobox)=
-# `infobox` Blocks #
+# *Information Boxes* #
 
 Jupyter Book implements a wealth of [admonition boxes].
 
@@ -100,7 +100,7 @@ used to provide its title.
 :title: A Custom Information Box
 ````md
 ```{infobox}
-:title: The Infomration Box Title
+:title: The Information Box Title
 The Information Box content.
 ```
 ````
@@ -128,7 +128,7 @@ e.g., `` ```{infobox} ibox:my-tag ``.
 :title: Another Custom Information Box
 ````md
 ```{infobox} ibox:my-tag
-:title: The Title of Another Infomration Box
+:title: The Title of Another Information Box
 The content of another Information Box.
 ```
 ````

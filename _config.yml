@@ -38,6 +38,7 @@ html:
 parse:
   myst_enable_extensions:
     - colon_fence
+    - substitution
 
 repository:
   url: https://github.com/simply-logical/prolog-book-template
@@ -55,21 +56,20 @@ sphinx:
       - CNAME
       - .nojekyll
     numfig_format:
-      figure: "Figure %s"
+      figure: 'Figure %s'
     numfig_secnum_depth: 2
     # Configure Sphinx-copybutton
     # <https://sphinx-copybutton.readthedocs.io/en/latest/>
-    copybutton_prompt_text: "\\s*\\?\\s*-\\s*"
-    copybutton_prompt_is_regexp: true
+    copybutton_prompt_text: ''
     copybutton_only_copy_prompt_lines: false
-    copybutton_remove_prompts: true
+    copybutton_remove_prompts: false
     # NOTE: if a copybutton is added to a SWISH code box, inheritance breaks!
     # <https://github.com/executablebooks/sphinx-copybutton/issues/115>
     # To avoid this we need to use a custom CSS selector
-    copybutton_selector: "div.highlight:not(.extract):not(.swish) > pre"
+    copybutton_selector: 'div.highlight:not(.extract):not(.swish) > pre'
     # Configure sphinx-prolog <https://github.com/simply-logical/sphinx-prolog>
     sp_exercise_directory: src/ex/
     sp_code_directory: src/code/
     sp_swish_url: https://swish.simply-logical.space/
     sp_swish_book_url: https://book-template.simply-logical.space/
-    sp_swish_hide_examples: true
+    sp_swish_hide_examples: false

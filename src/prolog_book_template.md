@@ -23,10 +23,10 @@ To build this book you need two Python packages: `jupyter-book` and
 You can either install them manually
 ```bash
 pip install "jupyter-book>=0.10.0"
-pip install "sphinx-prolog>=0.4"
+pip install "sphinx-prolog>=0.5"
 ```
 or by using our `requirements.txt` file, i.e.,
-`pip intsll -r requirements.txt`.
+`pip install -r requirements.txt`.
 Then, the book can be built with `jb build .`.
 
 :::{note}

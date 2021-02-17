@@ -1,5 +1,5 @@
 (sec:sphinxprolog:solex)=
-# `exercise` and `solution` Blocks #
+# *Exercise* and *Solution* Blocks #
 
 Sometimes you may want to set some (programming) *exercises* for your readers,
 and help them to learn by also publishing corresponding *solutions*.

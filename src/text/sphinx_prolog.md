@@ -18,7 +18,7 @@ These modules add useful functionality when building Prolog-infused educational
 -- teaching and self-study -- content with [Sphinx] and [Jupyter Book].
 
 :::{note}
-This guide is written for `sphinx-prolog` version `0.4`.
+This guide is written for `sphinx-prolog` version `0.5`.
 :::
 
 ## Installation ##
