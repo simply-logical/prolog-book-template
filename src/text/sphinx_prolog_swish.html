@@ -61,7 +61,7 @@
     <link rel="shortcut icon" href="../../_static/owl.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="prev" title="exercise and solution Blocks" href="sphinx_prolog_solex.html" />
+    <link rel="prev" title="Exercise and Solution Blocks" href="sphinx_prolog_solex.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -121,12 +121,9 @@
   <ul class="current collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="sphinx_prolog_infobox.html">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       infobox
-      </span>
-     </code>
-     Blocks
+     <em>
+      Information Boxes
+     </em>
     </a>
    </li>
    <li class="toctree-l2">
@@ -139,26 +136,27 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="sphinx_prolog_solex.html">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       exercise
-      </span>
-     </code>
+     <em>
+      Exercise
+     </em>
      and
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       solution
-      </span>
-     </code>
+     <em>
+      Solution
+     </em>
      Blocks
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
+     SWISH
      <em>
-      SWISH
+      Code
      </em>
-     Code and Query Blocks
+     and
+     <em>
+      Query
+     </em>
+     Blocks
     </a>
    </li>
   </ul>
@@ -258,6 +256,137 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup">
+   Setup
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#configuration">
+   Configuration
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#setting-up-external-files">
+     Setting up External Files
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#specifying-swish-server">
+     Specifying SWISH Server
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hiding-swish-queries">
+     Hiding SWISH Queries
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#loading-long-swish-scripts">
+     Loading Long SWISH Scripts
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#usage">
+   Usage
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#code-boxes">
+     Code Boxes
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#verbatim-code">
+       Verbatim Code
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#code-file">
+       Code File
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#query-boxes">
+     Query Boxes
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#inline">
+       Inline
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#display">
+       Display
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#implicit-queries">
+     Implicit Queries
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#hard-coding-queries">
+       Hard-coding Queries
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#importing-queries">
+       Importing Queries
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#explicit-queries">
+     Explicit Queries
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hiding-queries">
+     Hiding Queries
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#advanced-code-boxes">
+     Advanced Code Boxes
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#code-inheritance">
+       Code Inheritance
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#code-injection">
+       Code Injection
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#long-boxes">
+     Long Boxes
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -265,8 +394,1318 @@
         
               <div>
                 
-  <div class="section" id="swish-code-and-query-blocks">
-<span id="sec-sphinxprolog-swish"></span><h1><em>SWISH</em> Code and Query Blocks<a class="headerlink" href="#swish-code-and-query-blocks" title="Permalink to this headline">¶</a></h1>
+  <!--NOTE: Since the panel separation syntax (---) is the same as the
+          directive syntax used to provide parameters (--- fence), we need to
+          use substitutions to insert parameterised directives into panels.
+-->
+<div class="section" id="swish-code-and-query-blocks">
+<span id="sec-sphinxprolog-swish"></span><h1>SWISH <em>Code</em> and <em>Query</em> Blocks<a class="headerlink" href="#swish-code-and-query-blocks" title="Permalink to this headline">¶</a></h1>
+<p>At the core of our <code class="docutils literal notranslate"><span class="pre">sphinx-prolog</span></code> extension is the <code class="docutils literal notranslate"><span class="pre">swish</span></code> module;
+it enables creation of interactive <a class="reference external" href="https://www.swi-prolog.org/">SWI Prolog</a> code boxes by abstracting
+their setup complexities away from the content creator.
+Interactivity is achieved by dynamically embedding <a class="reference external" href="https://swish.swi-prolog.org/">SWISH</a> windows that bring
+an online, collaborative Prolog execution environment.
+The <code class="docutils literal notranslate"><span class="pre">sphinx_prolog.swish</span></code> Sphinx extension module implements two types of
+<em>display</em> boxes – <code class="docutils literal notranslate"><span class="pre">swish</span></code> and <code class="docutils literal notranslate"><span class="pre">swish-query</span></code> – and one inline code
+listing introduced with <code class="docutils literal notranslate"><span class="pre">swish-query</span></code>.
+The <code class="docutils literal notranslate"><span class="pre">swish</span></code> command is responsible for creating interactive SWISH Prolog code
+blocks.
+Both <code class="docutils literal notranslate"><span class="pre">swish-query</span></code> instructions, on the other hand, embed plain-looking code
+listings designated for Prolog queries, which can be exported to or imported
+by SWISH code blocks.</p>
+<div class="section" id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
+<p>To enable the <code class="docutils literal notranslate"><span class="pre">sphinx_prolog.swish</span></code> extension module in your Jupyter Book,
+include its name in your <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code> file under the <code class="docutils literal notranslate"><span class="pre">sphinx.extra_extensions</span></code>
+key.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">sphinx</span><span class="p">:</span>
+  <span class="nt">extra_extensions</span><span class="p">:</span>
+    <span class="c1"># Load sphinx-prolog &lt;https://github.com/simply-logical/sphinx-prolog&gt;</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">sphinx_prolog.swish</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See the <a class="reference internal" href="sphinx_prolog.html#sec-sphinxprolog-usage"><span class="std std-ref">Usage</span></a> section of the <a class="reference internal" href="sphinx_prolog.html#sec-sphinxprolog"><span class="std std-ref">sphinx-prolog Extension</span></a>
+page for more details.</p>
+</div>
+</div>
+<div class="section" id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">sphinx_prolog.swish</span></code> extension can <em>optionally</em> be configured to better
+accommodate a number of use cases.
+Similar to <a class="reference internal" href="sphinx_prolog_solex.html#sec-sphinxprolog-solex"><span class="std std-ref">Exercise and Solution Blocks</span></a>, the content of SWISH boxes can be
+loaded from external (Prolog code) files.
+The SWISH server – <a class="reference external" href="https://swish.swi-prolog.org/">https://swish.swi-prolog.org/</a> by default – used to
+execute the interactive code boxes may also be specified by the user.
+If the Prolog queries for some SWISH code boxes are provided verbatim (more
+on that in the <a class="reference internal" href="#sec-sphinxprolog-swish-usage-explicitqueries"><span class="std std-ref">Explicit Queries</span></a> section),
+they can be hidden from the reader to improve readability.
+Lastly, the default procedure for creating interactive SWISH blocks limits their
+size to 2,048 characters – the maximum length of a URL – overcoming which
+requires manual configuration.</p>
+<div class="section" id="setting-up-external-files">
+<span id="sec-sphinxprolog-swish-setup-exfiles"></span><h3>Setting up External Files<a class="headerlink" href="#setting-up-external-files" title="Permalink to this headline">¶</a></h3>
+<p>To enable populating interactive SWISH code boxes from external Prolog code
+files, their location (path to a directory) must be specified in the
+<code class="docutils literal notranslate"><span class="pre">sphinx-prolog</span></code> extension settings via the <code class="docutils literal notranslate"><span class="pre">sp_code_directory</span></code> configuration
+parameter.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">sphinx</span><span class="p">:</span>
+  <span class="nt">config</span><span class="p">:</span>
+    <span class="c1"># Configure sphinx-prolog &lt;https://github.com/simply-logical/sphinx-prolog&gt;</span>
+    <span class="nt">sp_code_directory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">src/code/</span>
+</pre></div>
+</div>
+<p>It is <strong>required</strong> when loading the content of SWISH boxes from files,
+or when implicitly prepending or appending Prolog code to SWISH boxes using
+the <code class="docutils literal notranslate"><span class="pre">source-text-start</span></code> and <code class="docutils literal notranslate"><span class="pre">source-text-end</span></code> parameters (see the
+<a class="reference internal" href="#sec-sphinxprolog-swish-usage-advanced"><span class="std std-ref">Advanced Code Boxes</span></a> section below for more details).
+Additionally, the Prolog files <strong>must</strong> have the <code class="docutils literal notranslate"><span class="pre">.pl</span></code> extension.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>Loading Prolog files into interactive SWISH code boxes is explained in the
+<a class="reference internal" href="#sec-sphinxprolog-swish-usage-simple"><span class="std std-ref">Code Boxes</span></a> section below.</p>
+</div>
+</div>
+<div class="section" id="specifying-swish-server">
+<h3>Specifying SWISH Server<a class="headerlink" href="#specifying-swish-server" title="Permalink to this headline">¶</a></h3>
+<p>The default SWISH execution server is <a class="reference external" href="https://swish.swi-prolog.org/">https://swish.swi-prolog.org/</a>.
+It can be changed by specifying the <code class="docutils literal notranslate"><span class="pre">sp_swish_url</span></code> configuration parameter.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">sphinx</span><span class="p">:</span>
+  <span class="nt">config</span><span class="p">:</span>
+    <span class="c1"># Configure sphinx-prolog &lt;https://github.com/simply-logical/sphinx-prolog&gt;</span>
+    <span class="nt">sp_swish_url</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">https://swish.simply-logical.space/</span>
+</pre></div>
+</div>
+<p>You may consider hosting your own SWISH server if you would like to install
+custom SWI Prolog libraries and other code dependencies needed for your use
+case.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>In addition to Prolog, the <code class="docutils literal notranslate"><span class="pre">sphinx-prolog</span></code> package can be used to build
+documents with interactive <a class="reference external" href="https://friguzzi.github.io/cplint/_build/html/">cplint</a> code blocks.
+More information can be found at
+<a class="reference external" href="https://cplint-template.simply-logical.space/">https://cplint-template.simply-logical.space/</a>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Historically, hosting your page under a domain different than the one of the
+specified SWISH server prevented the code blocks from loading due to
+<em>cross-origin requests</em> being blocked by default.
+One way to resolve the problem with SWISH code boxes not working was to
+<em>enable third-party cookies</em> in your web browser.
+<strong>This is not the case any more, so you should be fine connecting to
+<a class="reference external" href="https://swish.swi-prolog.org/">https://swish.swi-prolog.org/</a>.</strong>
+For this reason, we have <a class="reference external" href="https://swish.simply-logical.space/">https://swish.simply-logical.space/</a> linked to
+<a class="reference external" href="https://swish.swi-prolog.org/">https://swish.swi-prolog.org/</a> – both URL access the same server, which is
+kindly hosted by the awesome <a class="reference external" href="https://www.swi-prolog.org/Contributors.html">SWI Prolog team</a>.</p>
+</div>
+</div>
+<div class="section" id="hiding-swish-queries">
+<span id="sec-sphinxprolog-swish-setup-visibility"></span><h3>Hiding SWISH Queries<a class="headerlink" href="#hiding-swish-queries" title="Permalink to this headline">¶</a></h3>
+<p>One way to pre-populate Prolog queries into your interactive SWISH boxes
+is to include a specially formatted <em>examples</em> section in your code, e.g.,</p>
+<div class="highlight-Prolog notranslate"><div class="highlight"><pre><span></span><span class="p">...</span>
+
+<span class="cm">/** &lt;examples&gt;</span>
+<span class="cm">?- my_query(a,X).</span>
+<span class="cm">?- my_query(b,X).</span>
+<span class="cm">*/</span>
+</pre></div>
+</div>
+<p>(more on that in the <a class="reference internal" href="#sec-sphinxprolog-swish-usage-explicitqueries"><span class="std std-ref">Explicit Queries</span></a>
+section below).
+Displaying these <em>examples</em> blocks in SWISH code boxes may be distracting, and
+you may wish to hide them by default.
+This can be achieved by setting the <em>optional</em> <code class="docutils literal notranslate"><span class="pre">sp_swish_hide_examples</span></code>
+configuration parameter to <code class="docutils literal notranslate"><span class="pre">true</span></code> (it defaults to <code class="docutils literal notranslate"><span class="pre">false</span></code>).</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">sphinx</span><span class="p">:</span>
+  <span class="nt">config</span><span class="p">:</span>
+    <span class="c1"># Configure sphinx-prolog &lt;https://github.com/simply-logical/sphinx-prolog&gt;</span>
+    <span class="nt">sp_swish_hide_examples</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+</pre></div>
+</div>
+<p>While this <code class="docutils literal notranslate"><span class="pre">sphinx-prolog</span></code> extension setting toggles global visibility of the
+<em>examples</em> blocks, you can override this behaviour for individual SWISH boxes
+with their <code class="docutils literal notranslate"><span class="pre">hide-examples</span></code> parameter – see the
+<a class="reference internal" href="#sec-sphinxprolog-swish-usage-visibility"><span class="std std-ref">Hiding Queries</span></a> section below for more details.</p>
+</div>
+<div class="section" id="loading-long-swish-scripts">
+<span id="sec-sphinxprolog-swish-config-longfiles"></span><h3>Loading Long SWISH Scripts<a class="headerlink" href="#loading-long-swish-scripts" title="Permalink to this headline">¶</a></h3>
+<p>Your Prolog code and queries are transferred to the interactive SWISH boxes
+within a URL request, e.g.,
+<a class="reference external" href="https://swish.swi-prolog.org/?code=exists_extension(sphinx,prolog).&amp;q=exists_extension(sphinx,A).">https://swish.swi-prolog.org/?code=exists_extension(sphinx,prolog).&amp;q=exists_extension(sphinx,A).</a>.
+Since URL requests are limited to 2,048 characters, longer box content
+cannot be transferred with this approach.
+To support large Prolog scripts, a different SWISH URL request format can be
+used:
+<a class="reference external" href="https://swish.swi-prolog.org/?code=https://book-template.simply-logical.space/_sources/prolog_build_files/long-complex-merged.pl&amp;q=exists_extension(jupyter_book,A).">https://swish.swi-prolog.org/?code=https://book-template.simply-logical.space/_sources/prolog_build_files/long-complex-merged.pl&amp;q=exists_extension(jupyter_book,A).</a>,
+where the <code class="docutils literal notranslate"><span class="pre">code</span></code> section specifies the web address of a Prolog code file.
+Such code files can be generated automatically by this extension and uploaded
+alongside your book to support long Prolog scripts.
+The entire procedure is executed under the hood and such code boxes are no
+different to standard SWISH boxes, however this functionality <strong>must</strong> be
+enabled for each individual code block via its <code class="docutils literal notranslate"><span class="pre">build-file</span></code> parameter –
+see the <a class="reference internal" href="#sec-sphinxprolog-swish-usage-file"><span class="std std-ref">Long Boxes</span></a> section below for more details.</p>
+<p>While such boxes will function as expected when the book is published online,
+they <strong>will not be able</strong> to load the underlying Prolog script when the book
+is built locally during development.
+Since the Prolog file used by such a SWISH block is created by the Jupyter
+Book build process, it will not be accessible to the code box until the book
+is uploaded online.
+To enable this functionality, the <code class="docutils literal notranslate"><span class="pre">sphinx-prolog</span></code> extension <strong>must</strong> know the
+base URL under which your book will be published.
+This information can be supplied via the <code class="docutils literal notranslate"><span class="pre">sp_swish_book_url</span></code> configuration
+setting.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">sphinx</span><span class="p">:</span>
+  <span class="nt">config</span><span class="p">:</span>
+    <span class="c1"># Configure sphinx-prolog &lt;https://github.com/simply-logical/sphinx-prolog&gt;</span>
+    <span class="nt">sp_swish_book_url</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">https://book-template.simply-logical.space/</span>
+</pre></div>
+</div>
+<p>It is used to compose links to Prolog code files that need to be accessed by
+file-based SWISH boxes.</p>
+<p>The Prolog files underlying such SWISH code blocks are temporarily
+stored in the <code class="docutils literal notranslate"><span class="pre">src/code/temp/</span></code> directory (relative to the root of your book)
+before being copied over to the <code class="docutils literal notranslate"><span class="pre">_sources/prolog_build_files/</span></code> folder
+located in the book build directory <code class="docutils literal notranslate"><span class="pre">_build/html/</span></code>.
+To avoid unnecessarily storing these files in your git repository,
+you may want to add the <code class="docutils literal notranslate"><span class="pre">src/code/temp/</span></code> path to your <a class="reference external" href="https://github.com/simply-logical/prolog-book-template/tree/master/.gitignore"><code class="docutils literal notranslate"><span class="pre">.gitignore</span></code></a>.
+Additionally, this temporary storage location should be excluded from the
+Jupyter Book build path by adding it to the <code class="docutils literal notranslate"><span class="pre">exclude_patterns</span></code> list
+in your <a class="reference external" href="https://github.com/simply-logical/prolog-book-template/tree/master/_config.yml"><code class="docutils literal notranslate"><span class="pre">_config.yml</span></code></a> configuration file.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">exclude_patterns</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">src/code/temp</span>
+</pre></div>
+</div>
+<p>This will help to avoid build issues down the line.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>File-based SWISH code boxes – enabled by the
+<a class="reference internal" href="#sec-sphinxprolog-swish-usage-file"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">build-file</span></code> parameter</span></a> individually for
+each SWISH block – will not work for local builds of your book since their
+underlying Prolog files cannot be accessed by SWISH until you upload them
+online alongside your book.</p>
+</div>
+</div>
+</div>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<p>Display SWISH code and query blocks are included using an admonition-like
+syntax, with their content provided explicitly in the definition statement.
+To build either of those two boxes use a triple-backtick fence respectively
+with <code class="docutils literal notranslate"><span class="pre">swish</span></code> or <code class="docutils literal notranslate"><span class="pre">swish-query</span></code> keyword wrapped in curly braces followed by
+a user-defined tag, i.e., <code class="docutils literal notranslate"><span class="pre">```{swish}</span> <span class="pre">swish:my-tag</span></code> and
+<code class="docutils literal notranslate"><span class="pre">```{swish-query}</span> <span class="pre">swishq:my-tag</span></code>.
+An inline SWISH query, on the other hand, is introduced using reference-like
+syntax, with its tag inserted in angle bracket after the query text, i.e.,
+<code class="docutils literal notranslate"><span class="pre">{swish-query}`?-</span> <span class="pre">query(Q).</span> <span class="pre">&lt;swishq:my-tag&gt;`</span></code>.</p>
+<p>The Prolog content included with these statements <em>can be referenced</em>.
+Since Prolog elements are <em>unnumbered</em>, they can <strong>only</strong> be hyper-linked
+with a pre-defined name using the <code class="docutils literal notranslate"><span class="pre">{ref}`my-tag`</span></code> syntax.
+In particular:</p>
+<ul class="simple">
+<li><p>referencing a SWISH <strong>code</strong> box – <code class="docutils literal notranslate"><span class="pre">{ref}`swish:my-tag`</span></code> – produces a
+“<em>SWISH code box</em>” hyper-link;</p></li>
+<li><p>referencing a SWISH <strong>query</strong> <em>box</em> (display) –
+<code class="docutils literal notranslate"><span class="pre">{ref}`swishq:my-display-tag`</span></code> – produces a “<em>SWISH query box</em>”
+hyper-link; and</p></li>
+<li><p>referencing a SWISH <strong>query</strong> <em>listing</em> (inline) –
+<code class="docutils literal notranslate"><span class="pre">{ref}`swishq:my-inline-tag`</span></code> – produces a “<em>SWISH query listing</em>”
+hyper-link.</p></li>
+</ul>
+<p>Keep in mind that the text of these hyper-links can be changed manually using
+the <code class="docutils literal notranslate"><span class="pre">{ref}`Custom</span> <span class="pre">Text</span> <span class="pre">&lt;my-tag&gt;`</span></code> syntax.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See the <a class="reference internal" href="sphinx_prolog_solex.html#sec-sphinxprolog-solex-referencing"><span class="std std-ref">Referencing</span></a> section of the
+<a class="reference internal" href="sphinx_prolog_solex.html#sec-sphinxprolog-solex"><span class="std std-ref">Exercise and Solution Blocks</span></a> page and the <a class="reference internal" href="sphinx_prolog.html#sec-sphinxprolog-usage"><span class="std std-ref">Usage</span></a>
+section of the <a class="reference internal" href="sphinx_prolog.html#sec-sphinxprolog"><span class="std std-ref">sphinx-prolog Extension</span></a> page for more details about
+<em>referencing</em>.</p>
+</div>
+<div class="section" id="code-boxes">
+<span id="sec-sphinxprolog-swish-usage-simple"></span><h3>Code Boxes<a class="headerlink" href="#code-boxes" title="Permalink to this headline">¶</a></h3>
+<p>Interactive <code class="docutils literal notranslate"><span class="pre">swish</span></code> code boxes can either list their Prolog script explicitly
+or load it from an external programme file.
+Each <code class="docutils literal notranslate"><span class="pre">swish</span></code> block <strong>must</strong> be tagged with a label prefixed with <code class="docutils literal notranslate"><span class="pre">swish:</span></code>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To improve readability of interactive SWISH code boxes and the markdown syntax
+responsible for their creation, we use <em>tabs</em> instead of side-by-side
+display panels utilised thus far.
+To access the source of each SWISH box presented on this page, click the
+<em>Syntax</em> tab above the code block.</p>
+</div>
+<div class="section" id="verbatim-code">
+<h4>Verbatim Code<a class="headerlink" href="#verbatim-code" title="Permalink to this headline">¶</a></h4>
+<p>The easiest way to construct an interactive SWISH code box is to include your
+Prolog script within the box.</p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="e0e13ad1-8742-40e6-935a-e4562ffc3c70" name="f8319f47-4e27-4c92-bf85-7e28c4f1130b" type="radio">
+</input><label class="tabbed-label" for="e0e13ad1-8742-40e6-935a-e4562ffc3c70">
+Outcome</label><div class="tabbed-content docutils">
+<div class="extract swish highlight highlight-Prolog notranslate" id="swish-simple-example">
+<pre class="literal-block source swish" id="swish-simple-example-code">
+<span></span><span class="nf">exists_extension</span><span class="p">(</span><span class="s s-Atom">sphinx</span><span class="p">,</span> <span class="s s-Atom">jupyter_book</span><span class="p">).</span>
+<span class="nf">exists_extension</span><span class="p">(</span><span class="s s-Atom">sphinx</span><span class="p">,</span> <span class="s s-Atom">prolog</span><span class="p">).</span>
+
+<span class="cm">/** &lt;examples&gt;</span>
+<span class="cm">?- exists_extension(sphinx, A).</span>
+<span class="cm">*/</span>
+</pre></div>
+</div>
+<input id="c55928c5-13dd-4ed0-9cf5-53c35e4d54f3" name="f8319f47-4e27-4c92-bf85-7e28c4f1130b" type="radio">
+</input><label class="tabbed-label" for="c55928c5-13dd-4ed0-9cf5-53c35e4d54f3">
+Syntax</label><div class="tabbed-content docutils">
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>```{swish} swish:simple-example
+exists_extension(sphinx, jupyter_book).
+exists_extension(sphinx, prolog).
+
+/** &lt;examples&gt;
+?- exists_extension(sphinx, A).
+*/
+```
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="code-file">
+<h4>Code File<a class="headerlink" href="#code-file" title="Permalink to this headline">¶</a></h4>
+<p>If you prefer to store your Prolog scripts in external programme files,
+you can load them into <code class="docutils literal notranslate"><span class="pre">swish</span></code> code boxes by placing them in a dedicated
+directory and setting up the <code class="docutils literal notranslate"><span class="pre">sphinx-prolog</span></code> extension appropriately.
+(See the <a class="reference internal" href="#sec-sphinxprolog-swish-setup-exfiles"><span class="std std-ref">Setting up External Files</span></a> section above for more
+details and setup instructions.)
+The Prolog files <strong>must</strong> have <code class="docutils literal notranslate"><span class="pre">.pl</span></code> extension;
+they are loaded into <code class="docutils literal notranslate"><span class="pre">swish</span></code> code boxes by <strong>formatting the tags of such boxes
+based on the names of these files</strong>.
+To this end, prepend the <code class="docutils literal notranslate"><span class="pre">swish:</span></code> prefix to and discard the <code class="docutils literal notranslate"><span class="pre">.pl</span></code> extension
+from the selected Prolog file name.
+For example, the file named <a class="reference external" href="https://github.com/simply-logical/prolog-book-template/tree/master/src/code/prolog_file.pl"><code class="docutils literal notranslate"><span class="pre">prolog_file.pl</span></code></a> stored in <a class="reference external" href="https://github.com/simply-logical/prolog-book-template/tree/master/src/code"><code class="docutils literal notranslate"><span class="pre">src/code/</span></code></a> can be
+loaded into a selected SWISH code box with the <code class="docutils literal notranslate"><span class="pre">swish:prolog_file</span></code> tag.</p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="200ab4a0-e545-4b28-bea4-938230ce2313" name="9bcff236-919f-4f45-aa64-c1bdd6130c0a" type="radio">
+</input><label class="tabbed-label" for="200ab4a0-e545-4b28-bea4-938230ce2313">
+Outcome</label><div class="tabbed-content docutils">
+<div class="extract swish highlight highlight-Prolog notranslate" id="swish-prolog-file">
+<pre class="literal-block source swish" id="swish-prolog-file-code">
+<span></span><span class="c1">% Source path: src/code/prolog_file.pl</span>
+
+<span class="nf">exists_extension</span><span class="p">(</span><span class="s s-Atom">sphinx</span><span class="p">,</span> <span class="s s-Atom">jupyter_book</span><span class="p">).</span>
+<span class="nf">exists_extension</span><span class="p">(</span><span class="s s-Atom">sphinx</span><span class="p">,</span> <span class="s s-Atom">prolog</span><span class="p">).</span>
+
+<span class="cm">/** &lt;examples&gt;</span>
+<span class="cm">?- exists_extension(sphinx, A).</span>
+<span class="cm">*/</span>
+</pre></div>
+</div>
+<input id="b73a185e-1bc1-48a5-81ae-1d43467d762f" name="9bcff236-919f-4f45-aa64-c1bdd6130c0a" type="radio">
+</input><label class="tabbed-label" for="b73a185e-1bc1-48a5-81ae-1d43467d762f">
+Syntax</label><div class="tabbed-content docutils">
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>```{swish} swish:prolog_file
+```
+</pre></div>
+</div>
+</div>
+</div>
+<p>As with <a class="reference internal" href="sphinx_prolog_solex.html#sec-sphinxprolog-solex-use-files"><span class="std std-ref">exercise and solution blocks</span></a>,
+the content of a SWISH box loaded from an external file can be <strong>overwritten</strong>
+by inserting a Prolog script directly in the box definition.</p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="f9e1158b-14e9-4c6b-a765-4b6a178349a0" name="94517097-6848-4022-80c7-1c2a3f2fe510" type="radio">
+</input><label class="tabbed-label" for="f9e1158b-14e9-4c6b-a765-4b6a178349a0">
+Outcome</label><div class="tabbed-content docutils">
+<div class="extract swish highlight highlight-Prolog notranslate" id="swish-prolog-file-copy">
+<pre class="literal-block source swish" id="swish-prolog-file-copy-code">
+<span></span><span class="nf">exists_extension</span><span class="p">(</span><span class="s s-Atom">jupyter_book</span><span class="p">,</span> <span class="s s-Atom">prolog</span><span class="p">).</span>
+<span class="nf">exists_extension</span><span class="p">(</span><span class="s s-Atom">jupyter_book</span><span class="p">,</span> <span class="s s-Atom">markdown</span><span class="p">).</span>
+
+<span class="cm">/** &lt;examples&gt;</span>
+<span class="cm">?- exists_extension(jupyter_book, A).</span>
+<span class="cm">*/</span>
+</pre></div>
+</div>
+<input id="971cf101-6f6f-4c6b-92f3-70fc1ca45b97" name="94517097-6848-4022-80c7-1c2a3f2fe510" type="radio">
+</input><label class="tabbed-label" for="971cf101-6f6f-4c6b-92f3-70fc1ca45b97">
+Syntax</label><div class="tabbed-content docutils">
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>```{swish} swish:prolog_file
+exists_extension(jupyter_book, prolog).
+exists_extension(jupyter_book, markdown).
+
+/** &lt;examples&gt;
+?- exists_extension(jupyter_book, A).
+*/
+```
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you look at the markdown source of this document, you will notice
+that the syntax of the <a class="reference internal" href="#swish-prolog-file-copy"><span class="std std-ref">SWISH code box</span></a> placed directly above
+uses a different tag (<code class="docutils literal notranslate"><span class="pre">swish:prolog_file</span></code>) than the actual definition of this
+block (<code class="docutils literal notranslate"><span class="pre">swish:prolog_file_copy</span></code>).
+Since two SWISH code boxes cannot be built from the same source file
+(due to a label conflict), we duplicated the <a class="reference external" href="https://github.com/simply-logical/prolog-book-template/tree/master/src/code/prolog_file.pl"><code class="docutils literal notranslate"><span class="pre">prolog_file.pl</span></code></a> Prolog
+source file with the <a class="reference external" href="https://github.com/simply-logical/prolog-book-template/tree/master/src/code/prolog_file_copy.pl"><code class="docutils literal notranslate"><span class="pre">prolog_file_copy.pl</span></code></a> name.</p>
+</div>
+</div>
+</div>
+<div class="section" id="query-boxes">
+<h3>Query Boxes<a class="headerlink" href="#query-boxes" title="Permalink to this headline">¶</a></h3>
+<p>SWISH code boxes can be populated with Prolog queries in a number of ways.
+Queries can be <em>manually inserted</em> into SWISH code boxes or
+<em>automatically imported</em> from selected <em>SWISH query</em> elements.
+The latter approach requires the user to embed and tag this type of content
+in the markdown source of a page.
+There are two types of such boxes: <em>inline</em> and <em>display</em>, each one with a
+dedicated syntax based on the <code class="docutils literal notranslate"><span class="pre">swish-query</span></code> keyword.
+Each SWISH query element <strong>must</strong> be tagged with a label prefixed with
+<code class="docutils literal notranslate"><span class="pre">swishq:</span></code>.
+Both inline and display query elements can contain multiple Prolog queries,
+each one starting with <code class="docutils literal notranslate"><span class="pre">?-</span></code> and finished with <code class="docutils literal notranslate"><span class="pre">.</span></code>.
+<strong>Inline query elements containing a single Prolog query may omit the opening
+<code class="docutils literal notranslate"><span class="pre">?-</span></code> and closing <code class="docutils literal notranslate"><span class="pre">.</span></code> symbols.</strong></p>
+<div class="section" id="inline">
+<h4>Inline<a class="headerlink" href="#inline" title="Permalink to this headline">¶</a></h4>
+<p>Inline SWISH queries appear as <em>code snippets</em> displayed in typewriter font
+without syntax highlighting.</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-header docutils">
+<p class="card-text">Outcome</p>
+</div>
+<div class="card-body docutils">
+<p class="card-text">A possible SWISH query embedded inline is
+<span class="extract swish" id="swishq-inline">
+<code class="swish query" id="swishq-inline-query">
+?- exists_extension(jupyter_book, Inline).</code></span>.</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-header docutils">
+<p class="card-text">Syntax</p>
+</div>
+<div class="card-body docutils">
+<p class="card-text">A possible SWISH query embedded inline is
+<code class="docutils literal notranslate"><span class="pre">{swish-query}`?-</span> <span class="pre">exists_extension(jupyter_book,</span> <span class="pre">Inline).</span> <span class="pre">&lt;swishq:inline&gt;`</span></code>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="display">
+<h4>Display<a class="headerlink" href="#display" title="Permalink to this headline">¶</a></h4>
+<p>Display SWISH queries appear as block <em>code listings</em> formatted with the
+Prolog syntax highlighting.</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-header docutils">
+<p class="card-text">Outcome</p>
+</div>
+<div class="card-body docutils">
+<p class="card-text">A SWISH query can also be displayed as a block:</p>
+<div class="extract swish" id="swishq-display">
+<div class="swish query highlight-Prolog notranslate" id="swishq-display-query"><div class="highlight"><pre><span></span><span class="s s-Atom">?-</span> <span class="nf">exists_extension</span><span class="p">(</span><span class="s s-Atom">jupyter_book</span><span class="p">,</span>
+                    <span class="nv">Display</span><span class="p">).</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-header docutils">
+<p class="card-text">Syntax</p>
+</div>
+<div class="card-body docutils">
+<p class="card-text">A SWISH query can also be displayed as a block:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>```{swish-query} swishq:display
+?- exists_extension(jupyter_book,
+                    Display).
+```
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p><em>Importing</em> tagged Prolog queries into SWISH code boxes is mostly initiated
+by each code block individually.
+However, in some cases it may be more convenient to reverse this process and
+<em>export</em> a SWISH query into selected code blocks.
+The optional <code class="docutils literal notranslate"><span class="pre">source-id</span></code> parameter is used to this end – it takes a
+space-separated list of tags of the target code boxes.
+This functionality is <strong>only</strong> available for <em>display</em> <code class="docutils literal notranslate"><span class="pre">swish-query</span></code> blocks.
+Multiple query boxes can be exported to a single SWISH code block.</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-header docutils">
+<p class="card-text">Outcome</p>
+</div>
+<div class="card-body docutils">
+<p class="card-text">A display SWISH query can be exported into selected code blocks.</p>
+<div class="extract swish" id="swishq-display-in">
+<div class="swish query highlight-Prolog notranslate" id="swishq-display-in-query" source-id="swish-in-1-code swish-in-2-code"><div class="highlight"><pre><span></span><span class="s s-Atom">?-</span> <span class="nf">exists_extension</span><span class="p">(</span><span class="s s-Atom">jupyter_book</span><span class="p">,</span>
+                    <span class="nv">Injected</span><span class="p">).</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-header docutils">
+<p class="card-text">Syntax</p>
+</div>
+<div class="card-body docutils">
+<p class="card-text">A display SWISH query can be exported into selected code blocks.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>```{swish-query} swishq:display-in
+---
+source-id: swish:in-1 swish:in-2
+---
+?- exists_extension(jupyter_book,
+                    Injected).
+```
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>This query is exported to the two SWISH code boxes displayed below.
+Note that the export procedure <strong>overrides</strong> the queries listed in SWISH
+code boxes explicitly via the <code class="docutils literal notranslate"><span class="pre">/**</span> <span class="pre">&lt;examples&gt;</span> <span class="pre">...</span> <span class="pre">*/</span></code> syntax.
+Therefore, the second code box will disregard the verbatim
+<code class="docutils literal notranslate"><span class="pre">exists_extension(sphinx,</span> <span class="pre">Q).</span></code> query and only present the user with the
+exported <code class="docutils literal notranslate"><span class="pre">exists_extension(jupyter_book,</span> <span class="pre">Injected)</span></code> query.
+Queries can only be exported to SWISH code boxes placed on <strong>the same page</strong>,
+i.e., in the same markdown document.</p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="b371b4e2-5099-45a5-8a4f-e48265433d35" name="8dea841c-d480-4621-a50f-3ff9ecc5c487" type="radio">
+</input><label class="tabbed-label" for="b371b4e2-5099-45a5-8a4f-e48265433d35">
+Outcome</label><div class="tabbed-content docutils">
+<div class="extract swish highlight highlight-Prolog notranslate" id="swish-in-1">
+<pre class="literal-block source swish" id="swish-in-1-code">
+<span></span><span class="nf">exists_extension</span><span class="p">(</span><span class="s s-Atom">jupyter_book</span><span class="p">,</span> <span class="s s-Atom">prolog</span><span class="p">).</span>
+<span class="nf">exists_extension</span><span class="p">(</span><span class="s s-Atom">jupyter_book</span><span class="p">,</span> <span class="s s-Atom">markdown</span><span class="p">).</span>
+</pre></div>
+<div class="extract swish highlight highlight-Prolog notranslate" id="swish-in-2">
+<pre class="literal-block source swish" id="swish-in-2-code">
+<span></span><span class="nf">exists_extension</span><span class="p">(</span><span class="s s-Atom">jupyter_book</span><span class="p">,</span> <span class="s s-Atom">prolog</span><span class="p">).</span>
+<span class="nf">exists_extension</span><span class="p">(</span><span class="s s-Atom">jupyter_book</span><span class="p">,</span> <span class="s s-Atom">markdown</span><span class="p">).</span>
+
+<span class="cm">/** &lt;examples&gt;</span>
+<span class="cm">?- exists_extension(jupyter_book, Q).</span>
+<span class="cm">*/</span>
+</pre></div>
+</div>
+<input id="937c3048-26ed-4b16-9e38-086cf95dc9da" name="8dea841c-d480-4621-a50f-3ff9ecc5c487" type="radio">
+</input><label class="tabbed-label" for="937c3048-26ed-4b16-9e38-086cf95dc9da">
+Syntax</label><div class="tabbed-content docutils">
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>```{swish} swish:in-1
+exists_extension(jupyter_book, prolog).
+exists_extension(jupyter_book, markdown).
+```
+
+```{swish} swish:in-2
+exists_extension(jupyter_book, prolog).
+exists_extension(jupyter_book, markdown).
+
+/** &lt;examples&gt;
+?- exists_extension(jupyter_book, Q).
+*/
+```
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="implicit-queries">
+<h3>Implicit Queries<a class="headerlink" href="#implicit-queries" title="Permalink to this headline">¶</a></h3>
+<p>The more natural approach to including Prolog queries in your interactive SWISH
+code blocks is to either <em>assign</em> them directly to a box or <em>import</em> them
+from query blocks.</p>
+<div class="section" id="hard-coding-queries">
+<h4>Hard-coding Queries<a class="headerlink" href="#hard-coding-queries" title="Permalink to this headline">¶</a></h4>
+<p>Prolog queries can be included in a SWISH code box using the <code class="docutils literal notranslate"><span class="pre">query-text</span></code>
+parameter.
+It simply lists the queries that are to be available in a code block without
+revealing them to the user prior to running the box.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">query-text</span><span class="p">:</span> <span class="p p-Indicator">|</span>
+  <span class="no">?- exists_extension(jupyter_book, HQ_1).</span>
+  <span class="no">?- exists_extension(jupyter_book, HQ_2).</span>
+</pre></div>
+</div>
+<p>Each query <strong>must</strong> be prefixed with <code class="docutils literal notranslate"><span class="pre">?-</span></code> and finished with <code class="docutils literal notranslate"><span class="pre">.</span></code>, with multiple
+queries separated by a white space.
+The <code class="docutils literal notranslate"><span class="pre">|</span></code> notation is a syntactic sugar that allows to split a parameter string
+into multiple lines.</p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="5fff0b1a-7dfb-407c-87cb-52f734e738bd" name="2c3afb59-ef0d-41ae-afc1-bd329eb605f9" type="radio">
+</input><label class="tabbed-label" for="5fff0b1a-7dfb-407c-87cb-52f734e738bd">
+Outcome</label><div class="tabbed-content docutils">
+<div class="extract swish highlight highlight-Prolog notranslate" id="swish-hq">
+<pre class="literal-block source swish" id="swish-hq-code" query-text="?- exists_extension(jupyter_book, HQ_1). ?- exists_extension(jupyter_book, HQ_2).">
+<span></span><span class="nf">exists_extension</span><span class="p">(</span><span class="s s-Atom">jupyter_book</span><span class="p">,</span> <span class="s s-Atom">prolog</span><span class="p">).</span>
+<span class="nf">exists_extension</span><span class="p">(</span><span class="s s-Atom">jupyter_book</span><span class="p">,</span> <span class="s s-Atom">markdown</span><span class="p">).</span>
+</pre></div>
+</div>
+<input id="39bdc741-6087-4726-a081-94321f03725e" name="2c3afb59-ef0d-41ae-afc1-bd329eb605f9" type="radio">
+</input><label class="tabbed-label" for="39bdc741-6087-4726-a081-94321f03725e">
+Syntax</label><div class="tabbed-content docutils">
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>```{swish} swish:hq
+---
+query-text: |
+  ?- exists_extension(jupyter_book, HQ_1).
+  ?- exists_extension(jupyter_book, HQ_2).
+---
+exists_extension(jupyter_book, prolog).
+exists_extension(jupyter_book, markdown).
+```
+</pre></div>
+</div>
+</div>
+</div>
+<p>Including Prolog queries via the <code class="docutils literal notranslate"><span class="pre">query-text</span></code> SWISH box parameter is
+<strong>compatible</strong> with the query import facilitated via the <code class="docutils literal notranslate"><span class="pre">query-id</span></code> parameter
+described below and the <code class="docutils literal notranslate"><span class="pre">source-id</span></code> <em>export</em> parameter of SWISH query boxes.
+However, this procedure <strong>overrides</strong> the queries provided explicitly
+in SWISH code boxes with the <code class="docutils literal notranslate"><span class="pre">/**</span> <span class="pre">&lt;examples&gt;</span> <span class="pre">...</span> <span class="pre">*/</span></code> syntax.</p>
+</div>
+<div class="section" id="importing-queries">
+<h4>Importing Queries<a class="headerlink" href="#importing-queries" title="Permalink to this headline">¶</a></h4>
+<p>Another approach to populating interactive SWISH code blocks with Prolog
+queries is importing them from SWISH query boxes.
+It is achieved via the <code class="docutils literal notranslate"><span class="pre">query-id</span></code> parameter, which lists the tags of query
+boxes that ought to be imported.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">query-id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">swishq:inline swishq:display swishq:display-in</span>
+</pre></div>
+</div>
+<p>Queries can only be imported from SWISH query boxes placed on the same page,
+i.e., in the same markdown document.</p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="d532f3ff-5428-46af-bd9c-c56d8479d000" name="a4bc1bdb-0890-49ab-be5a-cb036a0467c5" type="radio">
+</input><label class="tabbed-label" for="d532f3ff-5428-46af-bd9c-c56d8479d000">
+Outcome</label><div class="tabbed-content docutils">
+<div class="extract swish highlight highlight-Prolog notranslate" id="swish-iq">
+<pre class="literal-block source swish temp" id="swish-iq-code" query-id="swishq-inline-query swishq-display-query swishq-display-in-query">
+<span></span><span class="nf">exists_extension</span><span class="p">(</span><span class="s s-Atom">jupyter_book</span><span class="p">,</span> <span class="s s-Atom">prolog</span><span class="p">).</span>
+<span class="nf">exists_extension</span><span class="p">(</span><span class="s s-Atom">jupyter_book</span><span class="p">,</span> <span class="s s-Atom">markdown</span><span class="p">).</span>
+</pre></div>
+</div>
+<input id="5c3c7c96-bd75-439b-b5b9-05aeff071117" name="a4bc1bdb-0890-49ab-be5a-cb036a0467c5" type="radio">
+</input><label class="tabbed-label" for="5c3c7c96-bd75-439b-b5b9-05aeff071117">
+Syntax</label><div class="tabbed-content docutils">
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>```{swish} swish:iq
+---
+query-id: swishq:inline swishq:display swishq:display-in
+---
+exists_extension(jupyter_book, prolog).
+exists_extension(jupyter_book, markdown).
+```
+</pre></div>
+</div>
+</div>
+</div>
+<p>Importing Prolog queries via the <code class="docutils literal notranslate"><span class="pre">query-id</span></code> SWISH box parameter is
+<strong>compatible</strong> with the queries defined via the <code class="docutils literal notranslate"><span class="pre">query-text</span></code> parameter
+described above and the <code class="docutils literal notranslate"><span class="pre">source-id</span></code> <em>export</em> parameter of SWISH query boxes.
+However, this procedure <strong>overrides</strong> the queries provided explicitly
+in SWISH code boxes with the <code class="docutils literal notranslate"><span class="pre">/**</span> <span class="pre">&lt;examples&gt;</span> <span class="pre">...</span> <span class="pre">*/</span></code> syntax.</p>
+</div>
+</div>
+<div class="section" id="explicit-queries">
+<span id="sec-sphinxprolog-swish-usage-explicitqueries"></span><h3>Explicit Queries<a class="headerlink" href="#explicit-queries" title="Permalink to this headline">¶</a></h3>
+<p>All of the Prolog query input methods described so far operate at the level
+of defining SWISH code boxes in your markdown source.
+Moreover, such queries are invisible to the user until the code block is
+launched.
+This may be sub-optimal when you want to display the queries directly in the
+embedded SWISH code boxes or if you want to distribute them alongside your
+Prolog script – either verbatim in the code block (markdown source) or
+within a standalone Prolog file that is being imported.
+In these cases, you can insert your queries explicitly in the Prolog script
+within a specially formatted comment block: <code class="docutils literal notranslate"><span class="pre">/**</span> <span class="pre">&lt;examples&gt;</span> <span class="pre">...</span> <span class="pre">*/</span></code>
+(see the <a class="reference external" href="https://swish.swi-prolog.org/help/help.html#help-examples">official SWISH help page</a> for more details).</p>
+<div class="highlight-Prolog notranslate"><div class="highlight"><pre><span></span><span class="p">...</span>
+
+<span class="cm">/** &lt;examples&gt;</span>
+<span class="cm">?- exists_extension(jupyter_book, HQ_1).</span>
+<span class="cm">?- exists_extension(jupyter_book, HQ_2).</span>
+<span class="cm">*/</span>
+</pre></div>
+</div>
+<p>Queries distributed in this way can be easily overridden with the SWISH code
+blocks’ <code class="docutils literal notranslate"><span class="pre">query-text</span></code> and <code class="docutils literal notranslate"><span class="pre">query-id</span></code> parameters and the <code class="docutils literal notranslate"><span class="pre">source-id</span></code> parameter
+of SWISH query boxes.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>A SWISH code block can be supplied with Prolog queries either explicitly by
+including the dedicated <code class="docutils literal notranslate"><span class="pre">/**</span> <span class="pre">&lt;examples&gt;</span> <span class="pre">...</span> <span class="pre">*/</span></code> comment bloc or implicitly
+via the box parameters.
+The latter method includes importing queries from SWISH query blocks using the
+<code class="docutils literal notranslate"><span class="pre">query-id</span></code> parameter or inputting them directly via the <code class="docutils literal notranslate"><span class="pre">query-text</span></code> parameter.
+Alternatively, SWISH queries can be exported from <em>display</em> query boxes to
+selected SWISH code blocks via the <code class="docutils literal notranslate"><span class="pre">source-id</span></code> parameter of query boxes.
+The three implicit methods – <code class="docutils literal notranslate"><span class="pre">query-id</span></code>, <code class="docutils literal notranslate"><span class="pre">query-text</span></code> and <code class="docutils literal notranslate"><span class="pre">source-id</span></code> –
+are cross-compatible, and the presence of any single one of them overrides
+the queries provided explicitly via the <code class="docutils literal notranslate"><span class="pre">/**</span> <span class="pre">&lt;examples&gt;</span> <span class="pre">...</span> <span class="pre">*/</span></code> comment bloc.
+Note that queries can only be <em>imported</em> to SWISH code blocks and <em>exported</em>
+from SWISH query boxes if these elements are placed on <strong>the same page</strong>,
+i.e., within a single markdown document.</p>
+</div>
+</div>
+<div class="section" id="hiding-queries">
+<span id="sec-sphinxprolog-swish-usage-visibility"></span><h3>Hiding Queries<a class="headerlink" href="#hiding-queries" title="Permalink to this headline">¶</a></h3>
+<p>You may want to have the benefits of storing your queries in Prolog files or
+verbatim scripts, e.g., for completeness, but prefer to hide them from the
+user.
+To this end, you can toggle visibility of the <code class="docutils literal notranslate"><span class="pre">/**</span> <span class="pre">&lt;examples&gt;</span> <span class="pre">...</span> <span class="pre">*/</span></code> comment
+blocks either <em>globally</em> for the entire book or <em>locally</em> for individual code
+boxes.
+The former is explained in the <a class="reference internal" href="#sec-sphinxprolog-swish-setup-visibility"><span class="std std-ref">Hiding SWISH Queries</span></a>
+section above.
+The global behaviour can be overridden locally using the <code class="docutils literal notranslate"><span class="pre">hide-examples</span></code>
+parameter of SWISH code boxes.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">hide-examples</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+</pre></div>
+</div>
+<p>This switch works for verbatim and file-based code blocks.</p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="7058c6d5-98b3-43c6-a9e0-9e1bc045a5b9" name="ede97111-6bbb-46b5-9145-5a6956ac1400" type="radio">
+</input><label class="tabbed-label" for="7058c6d5-98b3-43c6-a9e0-9e1bc045a5b9">
+Outcome</label><div class="tabbed-content docutils">
+<p>You will only see the <code class="docutils literal notranslate"><span class="pre">/**</span> <span class="pre">&lt;examples&gt;</span> <span class="pre">...</span> <span class="pre">*/</span></code> portion of this code box
+in the programme section of the SWISH window after launching it.</p>
+<div class="extract swish highlight highlight-Prolog notranslate" id="swish-hide">
+<pre class="literal-block source swish temp" id="swish-hide-code">
+<span></span><span class="nf">exists_extension</span><span class="p">(</span><span class="s s-Atom">jupyter_book</span><span class="p">,</span> <span class="s s-Atom">prolog</span><span class="p">).</span>
+<span class="nf">exists_extension</span><span class="p">(</span><span class="s s-Atom">jupyter_book</span><span class="p">,</span> <span class="s s-Atom">markdown</span><span class="p">).</span><div class="hide-examples">
+
+<span class="cm">/** &lt;examples&gt;</span>
+<span class="cm">?- exists_extension(jupyter_book, HiddenQuery).</span>
+<span class="cm">*/</span></div>
+</pre></div>
+</div>
+<input id="207e1da7-5cbc-4afc-84a0-a690a11cb01c" name="ede97111-6bbb-46b5-9145-5a6956ac1400" type="radio">
+</input><label class="tabbed-label" for="207e1da7-5cbc-4afc-84a0-a690a11cb01c">
+Syntax</label><div class="tabbed-content docutils">
+<p>You will only see the <code class="docutils literal notranslate"><span class="pre">/**</span> <span class="pre">&lt;examples&gt;</span> <span class="pre">...</span> <span class="pre">*/</span></code> portion of this code box
+in the programme section of the SWISH window after launching it.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>```{swish} swish:hide
+---
+hide-examples: true
+---
+exists_extension(jupyter_book, prolog).
+exists_extension(jupyter_book, markdown).
+
+/** &lt;examples&gt;
+?- exists_extension(jupyter_book, HiddenQuery).
+*/
+```
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="advanced-code-boxes">
+<span id="sec-sphinxprolog-swish-usage-advanced"></span><h3>Advanced Code Boxes<a class="headerlink" href="#advanced-code-boxes" title="Permalink to this headline">¶</a></h3>
+<p>In certain cases, a SWISH code box may depend on a Prolog programme that has
+been split into multiple code blocks scattered throughout a page.
+To avoid manually repeating these pieces of code in multiple boxes, we allow
+each SWISH code block to <em>inherit</em> content from multiple other boxes.
+Additionally, we facilitate <em>injecting</em> external Prolog code into a SWISH
+code block such that it is only visible upon launching this box.
+Both these operations can be applied to a single code block simultaneously.
+When a piece of code is inherited or injected, it is <strong>stripped</strong> of all its
+<code class="docutils literal notranslate"><span class="pre">/**</span> <span class="pre">&lt;examples&gt;</span> <span class="pre">...</span> <span class="pre">*/</span></code> blocks to avoid accumulating unwanted queries.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>When <strong>inheriting</strong> code from SWISH code blocks, all of the boxes involved
+in this procedure must reside on <strong>the same</strong> page, i.e., be placed in a
+single markdown file.
+<strong>Code injection</strong> is not affected by this limitation since it is based on
+external Prolog files.</p>
+</div>
+<div class="section" id="code-inheritance">
+<h4>Code Inheritance<a class="headerlink" href="#code-inheritance" title="Permalink to this headline">¶</a></h4>
+<p>The inheritance is implicit and the inherited code gets injected only when
+a box is launched, therefore not affecting its appearance.
+Multiple code blocks can be inherited using the <code class="docutils literal notranslate"><span class="pre">inherit-id</span></code> parameter,
+which takes a space-separated list of code box tags.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">inherit-id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">swish:iq swish:hide</span>
+</pre></div>
+</div>
+<div class="tabbed-set docutils">
+<input checked="checked" id="c59bca5f-fc92-455a-be4b-cfff1d1a420e" name="9d5aa0a5-c193-4c24-83dd-ed2f85c4813f" type="radio">
+</input><label class="tabbed-label" for="c59bca5f-fc92-455a-be4b-cfff1d1a420e">
+Outcome</label><div class="tabbed-content docutils">
+<div class="extract swish highlight highlight-Prolog notranslate" id="swish-inherit">
+<pre class="literal-block source swish inherit" id="swish-inherit-code" inherit-id="swish-iq-code swish-hide-code">
+<span></span><span class="nf">exists_extension</span><span class="p">(</span><span class="s s-Atom">jupyter_book</span><span class="p">,</span> <span class="s s-Atom">prolog</span><span class="p">).</span>
+<span class="nf">exists_extension</span><span class="p">(</span><span class="s s-Atom">jupyter_book</span><span class="p">,</span> <span class="s s-Atom">markdown</span><span class="p">).</span>
+
+<span class="cm">/** &lt;examples&gt;</span>
+<span class="cm">?- exists_extension(jupyter_book, InheritingCodeBox).</span>
+<span class="cm">*/</span>
+</pre></div>
+</div>
+<input id="34226d06-9796-43c2-b912-79bbdf9ebb8d" name="9d5aa0a5-c193-4c24-83dd-ed2f85c4813f" type="radio">
+</input><label class="tabbed-label" for="34226d06-9796-43c2-b912-79bbdf9ebb8d">
+Syntax</label><div class="tabbed-content docutils">
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>```{swish} swish:inherit
+---
+inherit-id: swish:iq swish:hide
+---
+exists_extension(jupyter_book, prolog).
+exists_extension(jupyter_book, markdown).
+
+/** &lt;examples&gt;
+?- exists_extension(jupyter_book, InheritingCodeBox).
+*/
+```
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="code-injection">
+<h4>Code Injection<a class="headerlink" href="#code-injection" title="Permalink to this headline">¶</a></h4>
+<p>In addition to inheriting code from existing SWISH code block, code from
+external Prolog files can be <em>prepended</em> or <em>appended</em> to a code box.
+These Prolog programme files <strong>must</strong> be placed in the designated code
+directory – see the <a class="reference internal" href="#sec-sphinxprolog-swish-setup-exfiles"><span class="std std-ref">Setting up External Files</span></a> section
+above for more details.
+The code injection is achieved with the <code class="docutils literal notranslate"><span class="pre">source-text-start</span></code> and
+<code class="docutils literal notranslate"><span class="pre">source-text-end</span></code> parameters of SWISH code boxes.
+Each one takes a <strong>single</strong> Prolog code file name without the <code class="docutils literal notranslate"><span class="pre">.pl</span></code> extension,
+for example</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">source-text-start</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">prepend_code</span>
+<span class="nt">source-text-end</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">append_code</span>
+</pre></div>
+</div>
+<p>uses the two files – <a class="reference external" href="https://github.com/simply-logical/prolog-book-template/tree/master/src/code/prepend_code.pl"><code class="docutils literal notranslate"><span class="pre">prepend_code.pl</span></code></a> and <a class="reference external" href="https://github.com/simply-logical/prolog-book-template/tree/master/src/code/append_code.pl"><code class="docutils literal notranslate"><span class="pre">append_code.pl</span></code></a> – located
+in the <a class="reference external" href="https://github.com/simply-logical/prolog-book-template/tree/master/src/code"><code class="docutils literal notranslate"><span class="pre">src/code/</span></code></a> directory.
+Note that in this way you can include a Prolog code file that is already being
+used as the main source of an existing SWISH code block without any conflicts.
+For example, you can prepend or append the <a class="reference external" href="https://github.com/simply-logical/prolog-book-template/tree/master/src/code/prolog_file.pl"><code class="docutils literal notranslate"><span class="pre">prolog_file.pl</span></code></a> file despite it
+being used as the source of <a class="reference internal" href="#swish-prolog-file"><span class="std std-ref">this SWISH code box</span></a>.
+Similar to inheritance, code injection is <em>implicit</em>, hence the prepended and
+appended code is only visible after launching a code box.</p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="a4751d76-952f-4739-84ce-6d582a4ec38b" name="62acb02e-baed-4d88-b7ec-624fb8975a7d" type="radio">
+</input><label class="tabbed-label" for="a4751d76-952f-4739-84ce-6d582a4ec38b">
+Outcome</label><div class="tabbed-content docutils">
+<p>Note that the <code class="docutils literal notranslate"><span class="pre">/**</span> <span class="pre">&lt;examples&gt;</span> <span class="pre">...</span> <span class="pre">*/</span></code> block is purged from the
+<a class="reference external" href="https://github.com/simply-logical/prolog-book-template/tree/master/src/code/append_code.pl"><code class="docutils literal notranslate"><span class="pre">append_code.pl</span></code></a> code file when it is being injected.</p>
+<div class="extract swish highlight highlight-Prolog notranslate" id="swish-inject">
+<pre class="literal-block source swish" id="swish-inject-code" source-text-end="
+% Source path: src/code/append_code.pl
+
+exists_extension(jupyter_book, exercise_admonition).
+exists_extension(jupyter_book, solution_admonition)." source-text-start="% Source path: src/code/prepend_code.pl
+
+exists_extension(jupyter_book, swi_prolog).
+exists_extension(jupyter_book, swish).
+
+">
+<span></span><span class="nf">exists_extension</span><span class="p">(</span><span class="s s-Atom">jupyter_book</span><span class="p">,</span> <span class="s s-Atom">prolog</span><span class="p">).</span>
+<span class="nf">exists_extension</span><span class="p">(</span><span class="s s-Atom">jupyter_book</span><span class="p">,</span> <span class="s s-Atom">markdown</span><span class="p">).</span>
+
+<span class="cm">/** &lt;examples&gt;</span>
+<span class="cm">?- exists_extension(jupyter_book, ExplicitQuery).</span>
+<span class="cm">*/</span>
+</pre></div>
+</div>
+<input id="b0e3018a-8376-44a9-a357-71379f96dec8" name="62acb02e-baed-4d88-b7ec-624fb8975a7d" type="radio">
+</input><label class="tabbed-label" for="b0e3018a-8376-44a9-a357-71379f96dec8">
+Syntax</label><div class="tabbed-content docutils">
+<p>Note that the <code class="docutils literal notranslate"><span class="pre">/**</span> <span class="pre">&lt;examples&gt;</span> <span class="pre">...</span> <span class="pre">*/</span></code> block is purged from the
+<a class="reference external" href="https://github.com/simply-logical/prolog-book-template/tree/master/src/code/append_code.pl"><code class="docutils literal notranslate"><span class="pre">append_code.pl</span></code></a> code file when it is being injected.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>```{swish} swish:inject
+---
+source-text-start: prepend_code
+source-text-end: append_code
+---
+exists_extension(jupyter_book, prolog).
+exists_extension(jupyter_book, markdown).
+
+/** &lt;examples&gt;
+?- exists_extension(jupyter_book, ExplicitQuery).
+*/
+```
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="long-boxes">
+<span id="sec-sphinxprolog-swish-usage-file"></span><h3>Long Boxes<a class="headerlink" href="#long-boxes" title="Permalink to this headline">¶</a></h3>
+<p>The default technology used to construct SWISH code boxes limits their
+size – see the <a class="reference internal" href="#sec-sphinxprolog-swish-config-longfiles"><span class="std std-ref">Loading Long SWISH Scripts</span></a> section for
+more details about this issue and the <code class="docutils literal notranslate"><span class="pre">sphinx-prolog</span></code> configuration setup
+necessary to overcome it.
+Note that the main, imported and injected code as well as the implicit,
+inherited and exported queries all count towards the code box size.
+The SWISH code block embedded below is loaded from the <a class="reference external" href="https://github.com/simply-logical/prolog-book-template/tree/master/src/code/long_programme.pl"><code class="docutils literal notranslate"><span class="pre">long_programme.pl</span></code></a>
+code file whose length exceeds the size limit, therefore the box fails to
+materialise when attempting to launch it.</p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="abec8b9b-3c8c-4d8d-b844-32d400b762c8" name="b5c577ff-13e4-4678-8bc8-0bf3c5064409" type="radio">
+</input><label class="tabbed-label" for="abec8b9b-3c8c-4d8d-b844-32d400b762c8">
+Outcome</label><div class="tabbed-content docutils">
+<div class="extract swish highlight highlight-Prolog notranslate" id="swish-long-programme-copy">
+<pre class="literal-block source swish" id="swish-long-programme-copy-code">
+<span></span><span class="c1">% Source path: src/code/long_programme.pl</span>
+<span class="c1">% Simply Logical, Chapter 1</span>
+
+<span class="nf">connected</span><span class="p">(</span><span class="s s-Atom">bond_street</span><span class="p">,</span> <span class="s s-Atom">oxford_circus</span><span class="p">,</span> <span class="s s-Atom">central</span><span class="p">).</span>
+<span class="nf">connected</span><span class="p">(</span><span class="s s-Atom">oxford_circus</span><span class="p">,</span> <span class="s s-Atom">tottenham_court_road</span><span class="p">,</span> <span class="s s-Atom">central</span><span class="p">).</span>
+<span class="nf">connected</span><span class="p">(</span><span class="s s-Atom">bond_street</span><span class="p">,</span> <span class="s s-Atom">green_park</span><span class="p">,</span> <span class="s s-Atom">jubilee</span><span class="p">).</span>
+<span class="nf">connected</span><span class="p">(</span><span class="s s-Atom">green_park</span><span class="p">,</span> <span class="s s-Atom">charing_cross</span><span class="p">,</span> <span class="s s-Atom">jubilee</span><span class="p">).</span>
+<span class="nf">connected</span><span class="p">(</span><span class="s s-Atom">green_park</span><span class="p">,</span> <span class="s s-Atom">piccadilly_circus</span><span class="p">,</span> <span class="s s-Atom">piccadilly</span><span class="p">).</span>
+<span class="nf">connected</span><span class="p">(</span><span class="s s-Atom">piccadilly_circus</span><span class="p">,</span> <span class="s s-Atom">leicester_square</span><span class="p">,</span> <span class="s s-Atom">piccadilly</span><span class="p">).</span>
+<span class="nf">connected</span><span class="p">(</span><span class="s s-Atom">green_park</span><span class="p">,</span> <span class="s s-Atom">oxford_circus</span><span class="p">,</span> <span class="s s-Atom">victoria</span><span class="p">).</span>
+<span class="nf">connected</span><span class="p">(</span><span class="s s-Atom">oxford_circus</span><span class="p">,</span> <span class="s s-Atom">piccadilly_circus</span><span class="p">,</span> <span class="s s-Atom">bakerloo</span><span class="p">).</span>
+<span class="nf">connected</span><span class="p">(</span><span class="s s-Atom">piccadilly_circus</span><span class="p">,</span> <span class="s s-Atom">charing_cross</span><span class="p">,</span> <span class="s s-Atom">bakerloo</span><span class="p">).</span>
+<span class="nf">connected</span><span class="p">(</span><span class="s s-Atom">tottenham_court_road</span><span class="p">,</span> <span class="s s-Atom">leicester_square</span><span class="p">,</span> <span class="s s-Atom">northern</span><span class="p">).</span>
+<span class="nf">connected</span><span class="p">(</span><span class="s s-Atom">leicester_square</span><span class="p">,</span> <span class="s s-Atom">charing_cross</span><span class="p">,</span> <span class="s s-Atom">northern</span><span class="p">).</span>
+
+<span class="c1">% copy</span>
+<span class="nf">connected</span><span class="p">(</span><span class="s s-Atom">bond_street</span><span class="p">,</span> <span class="s s-Atom">oxford_circus</span><span class="p">,</span> <span class="s s-Atom">central</span><span class="p">).</span>
+<span class="nf">connected</span><span class="p">(</span><span class="s s-Atom">oxford_circus</span><span class="p">,</span> <span class="s s-Atom">tottenham_court_road</span><span class="p">,</span> <span class="s s-Atom">central</span><span class="p">).</span>
+<span class="nf">connected</span><span class="p">(</span><span class="s s-Atom">bond_street</span><span class="p">,</span> <span class="s s-Atom">green_park</span><span class="p">,</span> <span class="s s-Atom">jubilee</span><span class="p">).</span>
+<span class="nf">connected</span><span class="p">(</span><span class="s s-Atom">green_park</span><span class="p">,</span> <span class="s s-Atom">charing_cross</span><span class="p">,</span> <span class="s s-Atom">jubilee</span><span class="p">).</span>
+<span class="nf">connected</span><span class="p">(</span><span class="s s-Atom">green_park</span><span class="p">,</span> <span class="s s-Atom">piccadilly_circus</span><span class="p">,</span> <span class="s s-Atom">piccadilly</span><span class="p">).</span>
+<span class="nf">connected</span><span class="p">(</span><span class="s s-Atom">piccadilly_circus</span><span class="p">,</span> <span class="s s-Atom">leicester_square</span><span class="p">,</span> <span class="s s-Atom">piccadilly</span><span class="p">).</span>
+<span class="nf">connected</span><span class="p">(</span><span class="s s-Atom">green_park</span><span class="p">,</span> <span class="s s-Atom">oxford_circus</span><span class="p">,</span> <span class="s s-Atom">victoria</span><span class="p">).</span>
+<span class="nf">connected</span><span class="p">(</span><span class="s s-Atom">oxford_circus</span><span class="p">,</span> <span class="s s-Atom">piccadilly_circus</span><span class="p">,</span> <span class="s s-Atom">bakerloo</span><span class="p">).</span>
+<span class="nf">connected</span><span class="p">(</span><span class="s s-Atom">piccadilly_circus</span><span class="p">,</span> <span class="s s-Atom">charing_cross</span><span class="p">,</span> <span class="s s-Atom">bakerloo</span><span class="p">).</span>
+<span class="nf">connected</span><span class="p">(</span><span class="s s-Atom">tottenham_court_road</span><span class="p">,</span> <span class="s s-Atom">leicester_square</span><span class="p">,</span> <span class="s s-Atom">northern</span><span class="p">).</span>
+<span class="nf">connected</span><span class="p">(</span><span class="s s-Atom">leicester_square</span><span class="p">,</span> <span class="s s-Atom">charing_cross</span><span class="p">,</span> <span class="s s-Atom">northern</span><span class="p">).</span>
+
+<span class="cm">/*</span>
+<span class="cm">nearby(bond_street, oxford_circus).</span>
+<span class="cm">nearby(oxford_circus, tottenham_court_road).</span>
+<span class="cm">nearby(bond_street, tottenham_court_road).</span>
+<span class="cm">nearby(bond_street, green_park).</span>
+<span class="cm">nearby(green_park, charing_cross).</span>
+<span class="cm">nearby(bond_street, charing_cross).</span>
+<span class="cm">nearby(green_park, piccadilly_circus).</span>
+<span class="cm">nearby(piccadilly_circus, leicester_square).</span>
+<span class="cm">nearby(green_park, leicester_square).</span>
+<span class="cm">nearby(green_park, oxford_circus).</span>
+<span class="cm">nearby(oxford_circus, piccadilly_circus).</span>
+<span class="cm">nearby(piccadilly_circus, charing_cross).</span>
+<span class="cm">nearby(oxford_circus, charing_cross).</span>
+<span class="cm">nearby(tottenham_court_road, leicester_square).</span>
+<span class="cm">nearby(leicester_square, charing_cross).</span>
+<span class="cm">nearby(tottenham_court_road, charing_cross).</span>
+<span class="cm">*/</span>
+
+<span class="cm">/*</span>
+<span class="cm">% copy</span>
+<span class="cm">nearby(bond_street, oxford_circus).</span>
+<span class="cm">nearby(oxford_circus, tottenham_court_road).</span>
+<span class="cm">nearby(bond_street, tottenham_court_road).</span>
+<span class="cm">nearby(bond_street, green_park).</span>
+<span class="cm">nearby(green_park, charing_cross).</span>
+<span class="cm">nearby(bond_street, charing_cross).</span>
+<span class="cm">nearby(green_park, piccadilly_circus).</span>
+<span class="cm">nearby(piccadilly_circus, leicester_square).</span>
+<span class="cm">nearby(green_park, leicester_square).</span>
+<span class="cm">nearby(green_park, oxford_circus).</span>
+<span class="cm">nearby(oxford_circus, piccadilly_circus).</span>
+<span class="cm">nearby(piccadilly_circus, charing_cross).</span>
+<span class="cm">nearby(oxford_circus, charing_cross).</span>
+<span class="cm">nearby(tottenham_court_road, leicester_square).</span>
+<span class="cm">nearby(leicester_square, charing_cross).</span>
+<span class="cm">nearby(tottenham_court_road, charing_cross).</span>
+<span class="cm">*/</span>
+
+<span class="cm">/*</span>
+<span class="cm">reachable(bond_street, charing_cross).</span>
+<span class="cm">reachable(bond_street, green_park).</span>
+<span class="cm">reachable(bond_street, leicester_square).</span>
+<span class="cm">reachable(bond_street, oxford_circus).</span>
+<span class="cm">reachable(bond_street, piccadilly_circus).</span>
+<span class="cm">reachable(bond_street, tottenham_court_road).</span>
+<span class="cm">reachable(green_park, charing_cross).</span>
+<span class="cm">reachable(green_park, leicester_square).</span>
+<span class="cm">reachable(green_park, oxford_circus).</span>
+<span class="cm">reachable(green_park, piccadilly_circus).</span>
+<span class="cm">reachable(green_park, tottenham_court_road).</span>
+<span class="cm">reachable(leicester_square, charing_cross).</span>
+<span class="cm">reachable(oxford_circus, charing_cross).</span>
+<span class="cm">reachable(oxford_circus, leicester_square).</span>
+<span class="cm">reachable(oxford_circus, piccadilly_circus).</span>
+<span class="cm">reachable(oxford_circus, tottenham_court_road).</span>
+<span class="cm">reachable(piccadilly_circus, charing_cross).</span>
+<span class="cm">reachable(piccadilly_circus, leicester_square).</span>
+<span class="cm">reachable(tottenham_court_road, charing_cross).</span>
+<span class="cm">reachable(tottenham_court_road, leicester_square).</span>
+<span class="cm">*/</span>
+
+<span class="cm">/*</span>
+<span class="cm">% copy</span>
+<span class="cm">reachable(bond_street, charing_cross).</span>
+<span class="cm">reachable(bond_street, green_park).</span>
+<span class="cm">reachable(bond_street, leicester_square).</span>
+<span class="cm">reachable(bond_street, oxford_circus).</span>
+<span class="cm">reachable(bond_street, piccadilly_circus).</span>
+<span class="cm">reachable(bond_street, tottenham_court_road).</span>
+<span class="cm">reachable(green_park, charing_cross).</span>
+<span class="cm">reachable(green_park, leicester_square).</span>
+<span class="cm">reachable(green_park, oxford_circus).</span>
+<span class="cm">reachable(green_park, piccadilly_circus).</span>
+<span class="cm">reachable(green_park, tottenham_court_road).</span>
+<span class="cm">reachable(leicester_square, charing_cross).</span>
+<span class="cm">reachable(oxford_circus, charing_cross).</span>
+<span class="cm">reachable(oxford_circus, leicester_square).</span>
+<span class="cm">reachable(oxford_circus, piccadilly_circus).</span>
+<span class="cm">reachable(oxford_circus, tottenham_court_road).</span>
+<span class="cm">reachable(piccadilly_circus, charing_cross).</span>
+<span class="cm">reachable(piccadilly_circus, leicester_square).</span>
+<span class="cm">reachable(tottenham_court_road, charing_cross).</span>
+<span class="cm">reachable(tottenham_court_road, leicester_square).</span>
+<span class="cm">*/</span>
+
+<span class="nf">nearby</span><span class="p">(</span><span class="nv">X</span><span class="p">,</span> <span class="nv">Y</span><span class="p">)</span> <span class="p">:-</span>
+  <span class="nf">connected</span><span class="p">(</span><span class="nv">X</span><span class="p">,</span> <span class="nv">Y</span><span class="p">,</span> <span class="nv">L</span><span class="p">).</span>
+<span class="nf">nearby</span><span class="p">(</span><span class="nv">X</span><span class="p">,</span> <span class="nv">Y</span><span class="p">)</span> <span class="p">:-</span>
+  <span class="nf">connected</span><span class="p">(</span><span class="nv">X</span><span class="p">,</span> <span class="nv">Z</span><span class="p">,</span> <span class="nv">L</span><span class="p">),</span>
+  <span class="nf">connected</span><span class="p">(</span><span class="nv">Z</span><span class="p">,</span> <span class="nv">Y</span><span class="p">,</span> <span class="nv">L</span><span class="p">).</span>
+
+<span class="c1">% non-recursive version</span>
+<span class="nf">reachable</span><span class="p">(</span><span class="nv">X</span><span class="p">,</span> <span class="nv">Y</span><span class="p">)</span> <span class="p">:-</span>
+  <span class="nf">connected</span><span class="p">(</span><span class="nv">X</span><span class="p">,</span> <span class="nv">Y</span><span class="p">,</span> <span class="nv">L</span><span class="p">).</span>
+<span class="nf">reachable</span><span class="p">(</span><span class="nv">X</span><span class="p">,</span> <span class="nv">Y</span><span class="p">)</span> <span class="p">:-</span>
+  <span class="nf">connected</span><span class="p">(</span><span class="nv">X</span><span class="p">,</span> <span class="nv">Z</span><span class="p">,</span> <span class="nv">L1</span><span class="p">),</span>
+  <span class="nf">connected</span><span class="p">(</span><span class="nv">Z</span><span class="p">,</span> <span class="nv">Y</span><span class="p">,</span> <span class="nv">L2</span><span class="p">).</span>
+<span class="nf">reachable</span><span class="p">(</span><span class="nv">X</span><span class="p">,</span> <span class="nv">Y</span><span class="p">)</span> <span class="p">:-</span>
+  <span class="nf">connected</span><span class="p">(</span><span class="nv">X</span><span class="p">,</span> <span class="nv">Z1</span><span class="p">,</span> <span class="nv">L1</span><span class="p">),</span>
+  <span class="nf">connected</span><span class="p">(</span><span class="nv">Z1</span><span class="p">,</span> <span class="nv">Z2</span><span class="p">,</span> <span class="nv">L2</span><span class="p">),</span>
+  <span class="nf">connected</span><span class="p">(</span><span class="nv">Z2</span><span class="p">,</span> <span class="nv">Y</span><span class="p">,</span> <span class="nv">L3</span><span class="p">).</span>
+
+<span class="c1">% recursive version</span>
+<span class="nf">reachable_r</span><span class="p">(</span><span class="nv">X</span><span class="p">,</span> <span class="nv">Y</span><span class="p">)</span> <span class="p">:-</span>
+  <span class="nf">connected</span><span class="p">(</span><span class="nv">X</span><span class="p">,</span> <span class="nv">Y</span><span class="p">,</span> <span class="nv">L</span><span class="p">).</span>
+<span class="nf">reachable_r</span><span class="p">(</span><span class="nv">X</span><span class="p">,</span> <span class="nv">Y</span><span class="p">)</span> <span class="p">:-</span>
+  <span class="nf">connected</span><span class="p">(</span><span class="nv">X</span><span class="p">,</span> <span class="nv">Z</span><span class="p">,</span> <span class="nv">L</span><span class="p">),</span>
+  <span class="nf">reachable_r</span><span class="p">(</span><span class="nv">Z</span><span class="p">,</span> <span class="nv">Y</span><span class="p">).</span>
+
+<span class="cm">/** &lt;examples&gt;</span>
+<span class="cm">?- nearby(oxford_circus, Nearby).</span>
+<span class="cm">?- nearby(bond_street, Nearby).</span>
+<span class="cm">?- nearby(oxford_circus, Nearby).</span>
+
+<span class="cm">?- reachable(oxford_circus, Reachable).</span>
+<span class="cm">?- reachable(bond_street, Reachable).</span>
+<span class="cm">?- reachable(oxford_circus, Reachable).</span>
+<span class="cm">*/</span>
+</pre></div>
+</div>
+<input id="2211b55d-43dd-4465-b059-f8cebc8f622a" name="b5c577ff-13e4-4678-8bc8-0bf3c5064409" type="radio">
+</input><label class="tabbed-label" for="2211b55d-43dd-4465-b059-f8cebc8f622a">
+Syntax</label><div class="tabbed-content docutils">
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>```{swish} swish:long_programme
+```
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you look at the markdown source of this document, you will notice
+that the actual <em>tags</em> of SWISH code boxes placed in this section are
+different from those listed in the <em>Syntax</em> tabs.
+Again, this is because multiple boxes cannot be built from a single Prolog
+source file (due to a label conflict), requiring us to duplicate the
+<code class="docutils literal notranslate"><span class="pre">long_programme.pl</span></code> code file.</p>
+</div>
+<p>Such boxes can be made functional by loading them from external Prolog
+files behind the scenes (instead of sending their contend via URL requests).
+This file can be composed automatically during the book building process by
+enabling long file functionality with the <code class="docutils literal notranslate"><span class="pre">build-file</span></code> parameter of the
+SWISH code boxes.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">build-file</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+</pre></div>
+</div>
+<p>Such SWISH boxes will not work when browsing the local build of your book
+since the underlying code files must be hosted on a server accessible by SWISH.
+As noted in the <a class="reference internal" href="#sec-sphinxprolog-swish-config-longfiles"><span class="std std-ref">Loading Long SWISH Scripts</span></a> section above,
+these special code files are uploaded alongside your book, thus enabling the
+<code class="docutils literal notranslate"><span class="pre">build-file</span></code> SWISH code boxes to function correctly after publishing your
+book online.
+(You can preview the Prolog file loaded by the SWISH code box placed below
+<a class="reference external" href="https://book-template.simply-logical.space/_sources/prolog_build_files/long_programme-merged.pl">here</a>.)</p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="d6f9f2ec-dc41-4bfc-8814-14ae8b894f4a" name="7e33ce6d-c42d-4c67-a30b-be8cc52f10aa" type="radio">
+</input><label class="tabbed-label" for="d6f9f2ec-dc41-4bfc-8814-14ae8b894f4a">
+Outcome</label><div class="tabbed-content docutils">
+<div class="extract swish highlight highlight-Prolog notranslate" id="swish-long-programme">
+<pre class="literal-block source swish" id="swish-long-programme-code" prolog-file="https://book-template.simply-logical.space/_sources/prolog_build_files/long_programme-merged.pl">
+<span></span><span class="c1">% Source path: src/code/long_programme.pl</span>
+<span class="c1">% Simply Logical, Chapter 1</span>
+
+<span class="nf">connected</span><span class="p">(</span><span class="s s-Atom">bond_street</span><span class="p">,</span> <span class="s s-Atom">oxford_circus</span><span class="p">,</span> <span class="s s-Atom">central</span><span class="p">).</span>
+<span class="nf">connected</span><span class="p">(</span><span class="s s-Atom">oxford_circus</span><span class="p">,</span> <span class="s s-Atom">tottenham_court_road</span><span class="p">,</span> <span class="s s-Atom">central</span><span class="p">).</span>
+<span class="nf">connected</span><span class="p">(</span><span class="s s-Atom">bond_street</span><span class="p">,</span> <span class="s s-Atom">green_park</span><span class="p">,</span> <span class="s s-Atom">jubilee</span><span class="p">).</span>
+<span class="nf">connected</span><span class="p">(</span><span class="s s-Atom">green_park</span><span class="p">,</span> <span class="s s-Atom">charing_cross</span><span class="p">,</span> <span class="s s-Atom">jubilee</span><span class="p">).</span>
+<span class="nf">connected</span><span class="p">(</span><span class="s s-Atom">green_park</span><span class="p">,</span> <span class="s s-Atom">piccadilly_circus</span><span class="p">,</span> <span class="s s-Atom">piccadilly</span><span class="p">).</span>
+<span class="nf">connected</span><span class="p">(</span><span class="s s-Atom">piccadilly_circus</span><span class="p">,</span> <span class="s s-Atom">leicester_square</span><span class="p">,</span> <span class="s s-Atom">piccadilly</span><span class="p">).</span>
+<span class="nf">connected</span><span class="p">(</span><span class="s s-Atom">green_park</span><span class="p">,</span> <span class="s s-Atom">oxford_circus</span><span class="p">,</span> <span class="s s-Atom">victoria</span><span class="p">).</span>
+<span class="nf">connected</span><span class="p">(</span><span class="s s-Atom">oxford_circus</span><span class="p">,</span> <span class="s s-Atom">piccadilly_circus</span><span class="p">,</span> <span class="s s-Atom">bakerloo</span><span class="p">).</span>
+<span class="nf">connected</span><span class="p">(</span><span class="s s-Atom">piccadilly_circus</span><span class="p">,</span> <span class="s s-Atom">charing_cross</span><span class="p">,</span> <span class="s s-Atom">bakerloo</span><span class="p">).</span>
+<span class="nf">connected</span><span class="p">(</span><span class="s s-Atom">tottenham_court_road</span><span class="p">,</span> <span class="s s-Atom">leicester_square</span><span class="p">,</span> <span class="s s-Atom">northern</span><span class="p">).</span>
+<span class="nf">connected</span><span class="p">(</span><span class="s s-Atom">leicester_square</span><span class="p">,</span> <span class="s s-Atom">charing_cross</span><span class="p">,</span> <span class="s s-Atom">northern</span><span class="p">).</span>
+
+<span class="c1">% copy</span>
+<span class="nf">connected</span><span class="p">(</span><span class="s s-Atom">bond_street</span><span class="p">,</span> <span class="s s-Atom">oxford_circus</span><span class="p">,</span> <span class="s s-Atom">central</span><span class="p">).</span>
+<span class="nf">connected</span><span class="p">(</span><span class="s s-Atom">oxford_circus</span><span class="p">,</span> <span class="s s-Atom">tottenham_court_road</span><span class="p">,</span> <span class="s s-Atom">central</span><span class="p">).</span>
+<span class="nf">connected</span><span class="p">(</span><span class="s s-Atom">bond_street</span><span class="p">,</span> <span class="s s-Atom">green_park</span><span class="p">,</span> <span class="s s-Atom">jubilee</span><span class="p">).</span>
+<span class="nf">connected</span><span class="p">(</span><span class="s s-Atom">green_park</span><span class="p">,</span> <span class="s s-Atom">charing_cross</span><span class="p">,</span> <span class="s s-Atom">jubilee</span><span class="p">).</span>
+<span class="nf">connected</span><span class="p">(</span><span class="s s-Atom">green_park</span><span class="p">,</span> <span class="s s-Atom">piccadilly_circus</span><span class="p">,</span> <span class="s s-Atom">piccadilly</span><span class="p">).</span>
+<span class="nf">connected</span><span class="p">(</span><span class="s s-Atom">piccadilly_circus</span><span class="p">,</span> <span class="s s-Atom">leicester_square</span><span class="p">,</span> <span class="s s-Atom">piccadilly</span><span class="p">).</span>
+<span class="nf">connected</span><span class="p">(</span><span class="s s-Atom">green_park</span><span class="p">,</span> <span class="s s-Atom">oxford_circus</span><span class="p">,</span> <span class="s s-Atom">victoria</span><span class="p">).</span>
+<span class="nf">connected</span><span class="p">(</span><span class="s s-Atom">oxford_circus</span><span class="p">,</span> <span class="s s-Atom">piccadilly_circus</span><span class="p">,</span> <span class="s s-Atom">bakerloo</span><span class="p">).</span>
+<span class="nf">connected</span><span class="p">(</span><span class="s s-Atom">piccadilly_circus</span><span class="p">,</span> <span class="s s-Atom">charing_cross</span><span class="p">,</span> <span class="s s-Atom">bakerloo</span><span class="p">).</span>
+<span class="nf">connected</span><span class="p">(</span><span class="s s-Atom">tottenham_court_road</span><span class="p">,</span> <span class="s s-Atom">leicester_square</span><span class="p">,</span> <span class="s s-Atom">northern</span><span class="p">).</span>
+<span class="nf">connected</span><span class="p">(</span><span class="s s-Atom">leicester_square</span><span class="p">,</span> <span class="s s-Atom">charing_cross</span><span class="p">,</span> <span class="s s-Atom">northern</span><span class="p">).</span>
+
+<span class="cm">/*</span>
+<span class="cm">nearby(bond_street, oxford_circus).</span>
+<span class="cm">nearby(oxford_circus, tottenham_court_road).</span>
+<span class="cm">nearby(bond_street, tottenham_court_road).</span>
+<span class="cm">nearby(bond_street, green_park).</span>
+<span class="cm">nearby(green_park, charing_cross).</span>
+<span class="cm">nearby(bond_street, charing_cross).</span>
+<span class="cm">nearby(green_park, piccadilly_circus).</span>
+<span class="cm">nearby(piccadilly_circus, leicester_square).</span>
+<span class="cm">nearby(green_park, leicester_square).</span>
+<span class="cm">nearby(green_park, oxford_circus).</span>
+<span class="cm">nearby(oxford_circus, piccadilly_circus).</span>
+<span class="cm">nearby(piccadilly_circus, charing_cross).</span>
+<span class="cm">nearby(oxford_circus, charing_cross).</span>
+<span class="cm">nearby(tottenham_court_road, leicester_square).</span>
+<span class="cm">nearby(leicester_square, charing_cross).</span>
+<span class="cm">nearby(tottenham_court_road, charing_cross).</span>
+<span class="cm">*/</span>
+
+<span class="cm">/*</span>
+<span class="cm">% copy</span>
+<span class="cm">nearby(bond_street, oxford_circus).</span>
+<span class="cm">nearby(oxford_circus, tottenham_court_road).</span>
+<span class="cm">nearby(bond_street, tottenham_court_road).</span>
+<span class="cm">nearby(bond_street, green_park).</span>
+<span class="cm">nearby(green_park, charing_cross).</span>
+<span class="cm">nearby(bond_street, charing_cross).</span>
+<span class="cm">nearby(green_park, piccadilly_circus).</span>
+<span class="cm">nearby(piccadilly_circus, leicester_square).</span>
+<span class="cm">nearby(green_park, leicester_square).</span>
+<span class="cm">nearby(green_park, oxford_circus).</span>
+<span class="cm">nearby(oxford_circus, piccadilly_circus).</span>
+<span class="cm">nearby(piccadilly_circus, charing_cross).</span>
+<span class="cm">nearby(oxford_circus, charing_cross).</span>
+<span class="cm">nearby(tottenham_court_road, leicester_square).</span>
+<span class="cm">nearby(leicester_square, charing_cross).</span>
+<span class="cm">nearby(tottenham_court_road, charing_cross).</span>
+<span class="cm">*/</span>
+
+<span class="cm">/*</span>
+<span class="cm">reachable(bond_street, charing_cross).</span>
+<span class="cm">reachable(bond_street, green_park).</span>
+<span class="cm">reachable(bond_street, leicester_square).</span>
+<span class="cm">reachable(bond_street, oxford_circus).</span>
+<span class="cm">reachable(bond_street, piccadilly_circus).</span>
+<span class="cm">reachable(bond_street, tottenham_court_road).</span>
+<span class="cm">reachable(green_park, charing_cross).</span>
+<span class="cm">reachable(green_park, leicester_square).</span>
+<span class="cm">reachable(green_park, oxford_circus).</span>
+<span class="cm">reachable(green_park, piccadilly_circus).</span>
+<span class="cm">reachable(green_park, tottenham_court_road).</span>
+<span class="cm">reachable(leicester_square, charing_cross).</span>
+<span class="cm">reachable(oxford_circus, charing_cross).</span>
+<span class="cm">reachable(oxford_circus, leicester_square).</span>
+<span class="cm">reachable(oxford_circus, piccadilly_circus).</span>
+<span class="cm">reachable(oxford_circus, tottenham_court_road).</span>
+<span class="cm">reachable(piccadilly_circus, charing_cross).</span>
+<span class="cm">reachable(piccadilly_circus, leicester_square).</span>
+<span class="cm">reachable(tottenham_court_road, charing_cross).</span>
+<span class="cm">reachable(tottenham_court_road, leicester_square).</span>
+<span class="cm">*/</span>
+
+<span class="cm">/*</span>
+<span class="cm">% copy</span>
+<span class="cm">reachable(bond_street, charing_cross).</span>
+<span class="cm">reachable(bond_street, green_park).</span>
+<span class="cm">reachable(bond_street, leicester_square).</span>
+<span class="cm">reachable(bond_street, oxford_circus).</span>
+<span class="cm">reachable(bond_street, piccadilly_circus).</span>
+<span class="cm">reachable(bond_street, tottenham_court_road).</span>
+<span class="cm">reachable(green_park, charing_cross).</span>
+<span class="cm">reachable(green_park, leicester_square).</span>
+<span class="cm">reachable(green_park, oxford_circus).</span>
+<span class="cm">reachable(green_park, piccadilly_circus).</span>
+<span class="cm">reachable(green_park, tottenham_court_road).</span>
+<span class="cm">reachable(leicester_square, charing_cross).</span>
+<span class="cm">reachable(oxford_circus, charing_cross).</span>
+<span class="cm">reachable(oxford_circus, leicester_square).</span>
+<span class="cm">reachable(oxford_circus, piccadilly_circus).</span>
+<span class="cm">reachable(oxford_circus, tottenham_court_road).</span>
+<span class="cm">reachable(piccadilly_circus, charing_cross).</span>
+<span class="cm">reachable(piccadilly_circus, leicester_square).</span>
+<span class="cm">reachable(tottenham_court_road, charing_cross).</span>
+<span class="cm">reachable(tottenham_court_road, leicester_square).</span>
+<span class="cm">*/</span>
+
+<span class="nf">nearby</span><span class="p">(</span><span class="nv">X</span><span class="p">,</span> <span class="nv">Y</span><span class="p">)</span> <span class="p">:-</span>
+  <span class="nf">connected</span><span class="p">(</span><span class="nv">X</span><span class="p">,</span> <span class="nv">Y</span><span class="p">,</span> <span class="nv">L</span><span class="p">).</span>
+<span class="nf">nearby</span><span class="p">(</span><span class="nv">X</span><span class="p">,</span> <span class="nv">Y</span><span class="p">)</span> <span class="p">:-</span>
+  <span class="nf">connected</span><span class="p">(</span><span class="nv">X</span><span class="p">,</span> <span class="nv">Z</span><span class="p">,</span> <span class="nv">L</span><span class="p">),</span>
+  <span class="nf">connected</span><span class="p">(</span><span class="nv">Z</span><span class="p">,</span> <span class="nv">Y</span><span class="p">,</span> <span class="nv">L</span><span class="p">).</span>
+
+<span class="c1">% non-recursive version</span>
+<span class="nf">reachable</span><span class="p">(</span><span class="nv">X</span><span class="p">,</span> <span class="nv">Y</span><span class="p">)</span> <span class="p">:-</span>
+  <span class="nf">connected</span><span class="p">(</span><span class="nv">X</span><span class="p">,</span> <span class="nv">Y</span><span class="p">,</span> <span class="nv">L</span><span class="p">).</span>
+<span class="nf">reachable</span><span class="p">(</span><span class="nv">X</span><span class="p">,</span> <span class="nv">Y</span><span class="p">)</span> <span class="p">:-</span>
+  <span class="nf">connected</span><span class="p">(</span><span class="nv">X</span><span class="p">,</span> <span class="nv">Z</span><span class="p">,</span> <span class="nv">L1</span><span class="p">),</span>
+  <span class="nf">connected</span><span class="p">(</span><span class="nv">Z</span><span class="p">,</span> <span class="nv">Y</span><span class="p">,</span> <span class="nv">L2</span><span class="p">).</span>
+<span class="nf">reachable</span><span class="p">(</span><span class="nv">X</span><span class="p">,</span> <span class="nv">Y</span><span class="p">)</span> <span class="p">:-</span>
+  <span class="nf">connected</span><span class="p">(</span><span class="nv">X</span><span class="p">,</span> <span class="nv">Z1</span><span class="p">,</span> <span class="nv">L1</span><span class="p">),</span>
+  <span class="nf">connected</span><span class="p">(</span><span class="nv">Z1</span><span class="p">,</span> <span class="nv">Z2</span><span class="p">,</span> <span class="nv">L2</span><span class="p">),</span>
+  <span class="nf">connected</span><span class="p">(</span><span class="nv">Z2</span><span class="p">,</span> <span class="nv">Y</span><span class="p">,</span> <span class="nv">L3</span><span class="p">).</span>
+
+<span class="c1">% recursive version</span>
+<span class="nf">reachable_r</span><span class="p">(</span><span class="nv">X</span><span class="p">,</span> <span class="nv">Y</span><span class="p">)</span> <span class="p">:-</span>
+  <span class="nf">connected</span><span class="p">(</span><span class="nv">X</span><span class="p">,</span> <span class="nv">Y</span><span class="p">,</span> <span class="nv">L</span><span class="p">).</span>
+<span class="nf">reachable_r</span><span class="p">(</span><span class="nv">X</span><span class="p">,</span> <span class="nv">Y</span><span class="p">)</span> <span class="p">:-</span>
+  <span class="nf">connected</span><span class="p">(</span><span class="nv">X</span><span class="p">,</span> <span class="nv">Z</span><span class="p">,</span> <span class="nv">L</span><span class="p">),</span>
+  <span class="nf">reachable_r</span><span class="p">(</span><span class="nv">Z</span><span class="p">,</span> <span class="nv">Y</span><span class="p">).</span>
+
+<span class="cm">/** &lt;examples&gt;</span>
+<span class="cm">?- nearby(oxford_circus, Nearby).</span>
+<span class="cm">?- nearby(bond_street, Nearby).</span>
+<span class="cm">?- nearby(oxford_circus, Nearby).</span>
+
+<span class="cm">?- reachable(oxford_circus, Reachable).</span>
+<span class="cm">?- reachable(bond_street, Reachable).</span>
+<span class="cm">?- reachable(oxford_circus, Reachable).</span>
+<span class="cm">*/</span>
+</pre></div>
+</div>
+<input id="eae10781-43f0-458a-9b19-48d8070b2982" name="7e33ce6d-c42d-4c67-a30b-be8cc52f10aa" type="radio">
+</input><label class="tabbed-label" for="eae10781-43f0-458a-9b19-48d8070b2982">
+Syntax</label><div class="tabbed-content docutils">
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>```{swish} swish:long_programme
+---
+build-file: true
+---
+```
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All of the SWISH code and query block functionality is compatible with each
+other, unless explicitly stated in this document.
+The <a class="reference internal" href="#swish-long-complex"><span class="std std-ref">following example</span></a>:</p>
+<ul class="simple">
+<li><p><em>prepends</em> a code file,</p></li>
+<li><p><em>appends</em> a code file,</p></li>
+<li><p><em>inherits</em> two code blocks,</p></li>
+<li><p><em>imports</em> three queries, and</p></li>
+<li><p>explicitly <em>states</em> additional two queries.</p></li>
+</ul>
+<p>Moreover, <a class="reference internal" href="#swishq-long-complex"><span class="std std-ref">a query</span></a> is <em>exported</em> into
+<a class="reference internal" href="#swish-long-complex"><span class="std std-ref">this SWISH code block</span></a>.
+We also request to build an external Prolog file in case the entire
+content is too long to be loaded directly (you can preview the built file
+<a class="reference external" href="https://book-template.simply-logical.space/_sources/prolog_build_files/long-complex-merged.pl">here</a>).
+Finally, we hide the explicit <code class="docutils literal notranslate"><span class="pre">/**</span> <span class="pre">&lt;examples&gt;</span> <span class="pre">...</span> <span class="pre">*/</span></code> query block since it will
+be overridden by all the other queries anyway.</p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="14086491-ee53-40ab-bc49-5de5700e3b62" name="b9c3a61d-25a6-4280-8806-302bf6a031de" type="radio">
+</input><label class="tabbed-label" for="14086491-ee53-40ab-bc49-5de5700e3b62">
+Outcome</label><div class="tabbed-content docutils">
+<p>The following query</p>
+<div class="extract swish" id="swishq-long-complex">
+<div class="swish query highlight-Prolog notranslate" id="swishq-long-complex-query" source-id="swish-long-complex-code"><div class="highlight"><pre><span></span><span class="s s-Atom">?-</span> <span class="nf">exists_extension</span><span class="p">(</span><span class="s s-Atom">jupyter_book</span><span class="p">,</span> <span class="nv">Exported</span><span class="p">).</span>
+</pre></div>
+</div>
+</div>
+<p>is exported into the SWISH code block displayed below.</p>
+<div class="extract swish highlight highlight-Prolog notranslate" id="swish-long-complex">
+<pre class="literal-block source swish" id="swish-long-complex-code" prolog-file="https://book-template.simply-logical.space/_sources/prolog_build_files/long-complex-merged.pl" query-id="swishq-inline-query swishq-display-query swishq-display-in-query" query-text="?- exists_extension(jupyter_book, HQ_1). ?- exists_extension(jupyter_book, HQ_2).">
+<span></span><span class="nf">exists_extension</span><span class="p">(</span><span class="s s-Atom">jupyter_book</span><span class="p">,</span> <span class="s s-Atom">prolog</span><span class="p">).</span>
+<span class="nf">exists_extension</span><span class="p">(</span><span class="s s-Atom">jupyter_book</span><span class="p">,</span> <span class="s s-Atom">markdown</span><span class="p">).</span>
+</pre></div>
+</div>
+<input id="d548ace5-9bd2-4fb5-8c4c-1417986955a1" name="b9c3a61d-25a6-4280-8806-302bf6a031de" type="radio">
+</input><label class="tabbed-label" for="d548ace5-9bd2-4fb5-8c4c-1417986955a1">
+Syntax</label><div class="tabbed-content docutils">
+<p>The following query</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>```{swish-query} swishq:long-complex
+---
+source-id: swish:long-complex
+---
+?- exists_extension(jupyter_book, Exported).
+```
+</pre></div>
+</div>
+<p>is exported into the SWISH code block displayed below.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>```{swish} swish:long-complex
+---
+inherit-id: swish:iq swish:hide
+source-text-start: prepend_code
+source-text-end: append_code
+query-id: swishq:inline swishq:display swishq:display-in
+query-text: |
+  ?- exists_extension(jupyter_book, HQ_1).
+  ?- exists_extension(jupyter_book, HQ_2).
+hide-examples: true
+build-file: true
+---
+exists_extension(jupyter_book, prolog).
+exists_extension(jupyter_book, markdown).
+
+/** &lt;examples&gt;
+?- exists_extension(jupyter_book, ExplicitQuery).
+*/
+```
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For more information about the <em>SWISH</em> module see its
+<a class="reference external" href="https://github.com/simply-logical/sphinx-prolog#floppy_disk-swish-directive"><em>technical documentation</em></a>.</p>
+</div>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -289,6 +1728,9 @@
     </script>
     <script>kernelName = 'python3'</script>
 
+    <script>$(function() { $(".swish").LPN({swish:"https://swish.simply-logical.space/"}); });</script>
+
+
               </div>
               
         </div>
@@ -297,7 +1739,7 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="sphinx_prolog_solex.html" title="previous page"><code class="docutils literal notranslate"><span class="pre">exercise</span></code> and <code class="docutils literal notranslate"><span class="pre">solution</span></code> Blocks</a>
+    <a class='left-prev' id="prev-link" href="sphinx_prolog_solex.html" title="previous page"><em>Exercise</em> and <em>Solution</em> Blocks</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

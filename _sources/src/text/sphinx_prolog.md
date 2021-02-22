@@ -18,7 +18,14 @@ These modules add useful functionality when building Prolog-infused educational
 -- teaching and self-study -- content with [Sphinx] and [Jupyter Book].
 
 :::{note}
-This guide is written for `sphinx-prolog` version `0.4`.
+This guide is written for `sphinx-prolog` version `0.5`.
+:::
+
+:::{tip}
+In addition to Prolog, the `sphinx-prolog` package can be used to build
+documents with interactive [cplint] code blocks.
+More information can be found at
+<https://cplint-template.simply-logical.space/>.
 :::
 
 ## Installation ##
@@ -84,3 +91,4 @@ but the same functionality is available directly in Sphinx with its
 [GitHub repository]: https://github.com/simply-logical/sphinx-prolog
 [MyST Markdown]: https://myst-parser.readthedocs.io/
 [reStructuredText]: https://docutils.sourceforge.io/rst.html
+[cplint]: https://friguzzi.github.io/cplint/_build/html/

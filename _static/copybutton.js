@@ -133,7 +133,7 @@ function formatCopyText(textContent, copybuttonPromptText, isRegexp = false, onl
 
 var copyTargetText = (trigger) => {
   var target = document.querySelector(trigger.attributes['data-clipboard-target'].value);
-  return formatCopyText(target.innerText, '\\s*\\?\\s*-\\s*', true, false,  true)
+  return formatCopyText(target.innerText, '', false, false,  false)
 }
 
   // Initialize with a callback so we can modify the text before copy

@@ -61,7 +61,7 @@
     <link rel="shortcut icon" href="../../_static/owl.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="infobox Blocks" href="sphinx_prolog_infobox.html" />
+    <link rel="next" title="Information Boxes" href="sphinx_prolog_infobox.html" />
     <link rel="prev" title="Jupyter Book" href="jupyter_book.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -122,12 +122,9 @@
   <ul class="collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="sphinx_prolog_infobox.html">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       infobox
-      </span>
-     </code>
-     Blocks
+     <em>
+      Information Boxes
+     </em>
     </a>
    </li>
    <li class="toctree-l2">
@@ -140,26 +137,27 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="sphinx_prolog_solex.html">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       exercise
-      </span>
-     </code>
+     <em>
+      Exercise
+     </em>
      and
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       solution
-      </span>
-     </code>
+     <em>
+      Solution
+     </em>
      Blocks
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="sphinx_prolog_swish.html">
+     SWISH
      <em>
-      SWISH
+      Code
      </em>
-     Code and Query Blocks
+     and
+     <em>
+      Query
+     </em>
+     Blocks
     </a>
    </li>
   </ul>
@@ -296,12 +294,12 @@
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/simply-logical/sphinx-prolog/blob/master/sphinx_prolog/infobox.py"><code class="docutils literal notranslate"><span class="pre">infobox</span></code></a> responsible for creating admonition-styled <em>information boxes</em>
 that are referenceable and may be given a title – described in the
-<em><a class="reference internal" href="sphinx_prolog_infobox.html#sec-sphinxprolog-infobox"><span class="std std-ref">infobox Blocks</span></a></em> section;</p></li>
+<em><a class="reference internal" href="sphinx_prolog_infobox.html#sec-sphinxprolog-infobox"><span class="std std-ref">Information Boxes</span></a></em> section;</p></li>
 <li><p><a class="reference external" href="https://github.com/simply-logical/sphinx-prolog/blob/master/sphinx_prolog/pprolog.py"><code class="docutils literal notranslate"><span class="pre">pprolog</span></code></a> implementing custom <em>Prolog syntax highlighting</em> for code boxes
 – described in the <em><a class="reference internal" href="sphinx_prolog_pprolog.html#sec-sphinxprolog-pprolog"><span class="std std-ref">Pseudo Prolog Syntax Highlighting</span></a></em> section;</p></li>
 <li><p><a class="reference external" href="https://github.com/simply-logical/sphinx-prolog/blob/master/sphinx_prolog/solex.py"><code class="docutils literal notranslate"><span class="pre">solex</span></code></a> enabling creation of automatically numbered, referenceable and
 linked admonition-styled <em>exercise</em> and <em>solution boxes</em> – described in the
-<em><a class="reference internal" href="sphinx_prolog_solex.html#sec-sphinxprolog-solex"><span class="std std-ref">exercise and solution Blocks</span></a></em> section; and</p></li>
+<em><a class="reference internal" href="sphinx_prolog_solex.html#sec-sphinxprolog-solex"><span class="std std-ref">Exercise and Solution Blocks</span></a></em> section; and</p></li>
 <li><p><a class="reference external" href="https://github.com/simply-logical/sphinx-prolog/blob/master/sphinx_prolog/swish.py"><code class="docutils literal notranslate"><span class="pre">swish</span></code></a> allowing to incorporate interactive SWI Prolog
 <em><a class="reference external" href="https://swish.swi-prolog.org/">SWISH</a>-based code</em> and <em>query boxes</em> – described in the
 <em><a class="reference internal" href="sphinx_prolog_swish.html#sec-sphinxprolog-swish"><span class="std std-ref">SWISH Code and Query Blocks</span></a></em> section.</p></li>
@@ -310,7 +308,14 @@ linked admonition-styled <em>exercise</em> and <em>solution boxes</em> – descr
 – teaching and self-study – content with <a class="reference external" href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="reference external" href="https://jupyterbook.org/">Jupyter Book</a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This guide is written for <code class="docutils literal notranslate"><span class="pre">sphinx-prolog</span></code> version <code class="docutils literal notranslate"><span class="pre">0.4</span></code>.</p>
+<p>This guide is written for <code class="docutils literal notranslate"><span class="pre">sphinx-prolog</span></code> version <code class="docutils literal notranslate"><span class="pre">0.5</span></code>.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>In addition to Prolog, the <code class="docutils literal notranslate"><span class="pre">sphinx-prolog</span></code> package can be used to build
+documents with interactive <a class="reference external" href="https://friguzzi.github.io/cplint/_build/html/">cplint</a> code blocks.
+More information can be found at
+<a class="reference external" href="https://cplint-template.simply-logical.space/">https://cplint-template.simply-logical.space/</a>.</p>
 </div>
 <div class="section" id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
@@ -393,7 +398,7 @@ but the same functionality is available directly in Sphinx with its
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="jupyter_book.html" title="previous page">Jupyter Book</a>
-    <a class='right-next' id="next-link" href="sphinx_prolog_infobox.html" title="next page"><code class="docutils literal notranslate"><span class="pre">infobox</span></code> Blocks</a>
+    <a class='right-next' id="next-link" href="sphinx_prolog_infobox.html" title="next page"><em>Information Boxes</em></a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
