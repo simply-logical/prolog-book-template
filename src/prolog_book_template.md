@@ -1,6 +1,23 @@
 (sec:intro)=
 # Interactive Prolog Book Example #
 
+:::{note}
+Bugs and feature requests regarding the `sphinx-prolog` package and its
+functionality should be reported as issues in the
+[simply-logical/sphinx-prolog][sphinx-prolog-issues] GitHub repository.
+Typographical and other presentation errors related to this template and its
+content should be reported as issues in the
+[simply-logical/prolog-book-template][prolog-book-template-issues] GitHub
+repository.
+:::
+
+:::{tip}
+In addition to Prolog, the `sphinx-prolog` package can be used to build
+documents with interactive [cplint] code blocks.
+More information can be found at
+<https://cplint-template.simply-logical.space/>.
+:::
+
 ## About ##
 This online book describes the process of building online interactive Prolog
 materials using [SWI Prolog] and [SWISH].
@@ -42,6 +59,9 @@ In this book you will find information on how to:
 * {ref}`configure Jupyter Book to generate interactive Prolog content <sec:jupyterbook>`; and
 * {ref}`use Prolog-specific content, including interactive SWISH code boxes <sec:sphinxprolog>`.
 
+[sphinx-prolog-issues]: https://github.com/simply-logical/sphinx-prolog/issues
+[prolog-book-template-issues]: https://github.com/simply-logical/prolog-book-template/issues
+[cplint]: https://friguzzi.github.io/cplint/_build/html/
 [SWI Prolog]: https://www.swi-prolog.org/
 [SWISH]: https://swish.swi-prolog.org/
 [*GitHub Pages*]: https://pages.github.com/
