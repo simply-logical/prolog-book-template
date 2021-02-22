@@ -25,7 +25,7 @@ This guide is written for `sphinx-prolog` version `0.5`.
 In addition to Prolog, the `sphinx-prolog` package can be used to build
 documents with interactive [cplint] code blocks.
 More information can be found at
-<https://cplint-template.simply-logical.space/>.
+<http://cplint-template.simply-logical.space/>.
 :::
 
 ## Installation ##
