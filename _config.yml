@@ -32,7 +32,7 @@ html:
     The source of this book is available on
     <a href="https://github.com/simply-logical/prolog-book-template">GitHub</a>.
   extra_navbar: ''
-  google_analytics_id: '261828628'
+  google_analytics_id: G-Z7R6YD4633
   home_page_in_navbar: true
 
 parse:
